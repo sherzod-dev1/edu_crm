@@ -1,0 +1,969 @@
+.container {
+  padding: 24px;
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.bannerCard {
+  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+  border-radius: 16px;
+  padding: 24px;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.15);
+}
+
+.bannerLeft {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.childAvatar {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  font-weight: 800;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.35);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.bannerInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.portalBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background: rgba(59, 130, 246, 0.2);
+  color: #93c5fd;
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  padding: 3px 8px;
+  border-radius: 6px;
+  width: fit-content;
+}
+
+.childName {
+  font-size: 20px;
+  font-weight: 800;
+  margin: 0;
+  color: #ffffff;
+}
+
+.parentMeta {
+  font-size: 13px;
+  color: #cbd5e1;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.branchTag {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  color: #e2e8f0;
+}
+
+.bannerRight {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.quickStatBox {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  padding: 10px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 90px;
+}
+
+.quickStatVal {
+  font-size: 18px;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+.quickStatLbl {
+  font-size: 11px;
+  color: #94a3b8;
+  font-weight: 600;
+}
+
+/* Tabs */
+.tabsContainer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #ffffff;
+  padding: 6px;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.tabBtn {
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border-radius: 8px;
+  border: none;
+  background: transparent;
+  color: #64748b;
+  font-size: 13.5px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.tabBtn:hover {
+  color: #0f172a;
+  background: #f8fafc;
+}
+
+.tabBtnActive {
+  background: #2563eb !important;
+  color: #ffffff !important;
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.25);
+}
+
+/* Metrics Grid */
+.metricsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px;
+}
+
+.metricCard {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.metricIcon {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.metricContent {
+  display: flex;
+  flex-direction: column;
+}
+
+.metricValue {
+  font-size: 20px;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.metricLabel {
+  font-size: 12.5px;
+  color: #64748b;
+  font-weight: 600;
+}
+
+/* Content Card */
+.contentCard {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 20px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.sectionHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.sectionTitle {
+  font-size: 16px;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.subfilterGroup {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.subfilterBtn {
+  padding: 4px 12px;
+  border-radius: 20px;
+  border: 1px solid #e2e8f0;
+  background: #f8fafc;
+  color: #64748b;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.subfilterBtnActive {
+  background: #eff6ff;
+  border-color: #93c5fd;
+  color: #2563eb;
+  font-weight: 700;
+}
+
+/* Table */
+.tableWrapper {
+  overflow-x: auto;
+  border-radius: 10px;
+  border: 1px solid #f1f5f9;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.table th {
+  background: #f8fafc;
+  padding: 12px 14px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #475569;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.table td {
+  padding: 12px 14px;
+  font-size: 13px;
+  color: #334155;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.table tr:last-child td {
+  border-bottom: none;
+}
+
+.table tr:hover td {
+  background: #fafafa;
+}
+
+/* Badges */
+.badgePresent {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 8px;
+  border-radius: 6px;
+  background: #ecfdf5;
+  color: #059669;
+  font-size: 11.5px;
+  font-weight: 700;
+  border: 1px solid #a7f3d0;
+}
+
+.badgeAbsent {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 8px;
+  border-radius: 6px;
+  background: #fef2f2;
+  color: #dc2626;
+  font-size: 11.5px;
+  font-weight: 700;
+  border: 1px solid #fecaca;
+}
+
+.badgeLate {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 8px;
+  border-radius: 6px;
+  background: #fffbeb;
+  color: #d97706;
+  font-size: 11.5px;
+  font-weight: 700;
+  border: 1px solid #fde68a;
+}
+
+.scorePill {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 10px;
+  border-radius: 8px;
+  background: #fefce8;
+  color: #854d0e;
+  font-size: 12px;
+  font-weight: 800;
+  border: 1px solid #fef08a;
+}
+
+.scoreHigh {
+  background: #f0fdf4;
+  color: #15803d;
+  border-color: #bbf7d0;
+}
+
+/* Schedule Cards Grid */
+.scheduleGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 16px;
+}
+
+.scheduleCard {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+  transition: all 0.2s ease;
+}
+
+.scheduleCard:hover {
+  border-color: #cbd5e1;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.scheduleTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.groupBadge {
+  background: #eff6ff;
+  color: #2563eb;
+  padding: 3px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 700;
+  border: 1px solid #bfdbfe;
+}
+
+.scheduleTitle {
+  font-size: 16px;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0;
+}
+
+.scheduleInfoRow {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 10px 0;
+  border-top: 1px solid #f1f5f9;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.scheduleItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: #475569;
+}
+
+.scheduleTeacherBox {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 12.5px;
+  color: #64748b;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.teacherPhoneLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: #2563eb;
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  padding: 4px 10px;
+  border-radius: 8px;
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 12px;
+  transition: all 0.2s ease;
+}
+
+.teacherPhoneLink:hover {
+  background: #dbeafe;
+  transform: translateY(-1px);
+}
+
+/* ====================================================
+   MOBILE RESPONSIVE CARD STYLES (O'zgacha Uslubda)
+==================================================== */
+.mobileCardsList {
+  display: none;
+}
+
+.gradeMobileCard {
+  background: #ffffff;
+  border: 1.5px solid #f1f5f9;
+  border-radius: 14px;
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.gradeMobileCard:active {
+  transform: scale(0.99);
+}
+
+.gradeMobileHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.gradeMobileTypeBox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.tagHomework {
+  display: inline-flex;
+  align-items: center;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 6px;
+  background: #eff6ff;
+  color: #2563eb;
+  border: 1px solid #bfdbfe;
+}
+
+.tagActivity {
+  display: inline-flex;
+  align-items: center;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 6px;
+  background: #faf5ff;
+  color: #9333ea;
+  border: 1px solid #e9d5ff;
+}
+
+.gradeMobileDate {
+  font-size: 11.5px;
+  color: #64748b;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.gradeMobileScore {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 13px;
+  font-weight: 800;
+  padding: 4px 10px;
+  border-radius: 8px;
+  background: #fefce8;
+  color: #854d0e;
+  border: 1px solid #fef08a;
+}
+
+.gradeMobileBody {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 8px 10px;
+  background: #f8fafc;
+  border-radius: 10px;
+  border: 1px solid #f1f5f9;
+}
+
+.gradeMobileRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 12.5px;
+}
+
+.gradeLabel {
+  color: #64748b;
+  font-weight: 600;
+}
+
+.gradeVal {
+  color: #0f172a;
+  font-weight: 700;
+}
+
+.gradeMobileComment {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  background: linear-gradient(135deg, #fdf4ff 0%, #fae8ff 100%);
+  border: 1px solid #f0abfc;
+  border-left: 3px solid #c026d3;
+  padding: 8px 12px;
+  border-radius: 8px;
+}
+
+.commentQuoteIcon {
+  font-size: 13px;
+  line-height: 1;
+}
+
+.commentContent {
+  margin: 0;
+  font-size: 12px;
+  color: #701a75;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+/* Attendance Mobile Card */
+.attMobileCard {
+  background: #ffffff;
+  border: 1.5px solid #f1f5f9;
+  border-radius: 14px;
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+}
+
+.attMobileHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.attMobileDate {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #334155;
+}
+
+.attMobileTopic {
+  font-size: 14px;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0;
+  line-height: 1.35;
+}
+
+.attMobileBody {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 8px 10px;
+  background: #f8fafc;
+  border-radius: 10px;
+  border: 1px solid #f1f5f9;
+}
+
+.attMobileRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 12.5px;
+}
+
+.attMobileNote {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: #475569;
+  background: #fffbeb;
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid #fde68a;
+}
+
+.attNoteText {
+  color: #92400e;
+  font-weight: 600;
+}
+
+/* Empty & Loading */
+.emptyState {
+  text-align: center;
+  padding: 40px 20px;
+  color: #94a3b8;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.loadingBox {
+  text-align: center;
+  padding: 60px 20px;
+  font-size: 14px;
+  color: #64748b;
+}
+
+/* ====================================================
+   RESPONSIVE MEDIA QUERIES (Smartphones & Tablets)
+==================================================== */
+@media (max-width: 768px) {
+  .container {
+    padding: 10px 6px;
+    gap: 12px;
+  }
+
+  .bannerCard {
+    padding: 14px;
+    border-radius: 14px;
+    gap: 12px;
+  }
+
+  .bannerLeft {
+    width: 100%;
+    gap: 10px;
+  }
+
+  .childAvatar {
+    width: 42px;
+    height: 42px;
+    font-size: 16px;
+  }
+
+  .childName {
+    font-size: 16px;
+    line-height: 1.25;
+  }
+
+  .portalBadge {
+    font-size: 10px;
+    padding: 2px 7px;
+  }
+
+  .parentMeta {
+    font-size: 11.5px;
+    gap: 6px;
+  }
+
+  .branchTag {
+    font-size: 10.5px;
+    padding: 1px 6px;
+  }
+
+  .bannerRight {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+
+  .quickStatBox {
+    min-width: 0;
+    width: 100%;
+    padding: 6px 10px;
+    border-radius: 9px;
+    background: rgba(255, 255, 255, 0.08);
+  }
+
+  .quickStatVal {
+    font-size: 15px;
+    font-weight: 800;
+  }
+
+  .quickStatLbl {
+    font-size: 10px;
+  }
+
+  /* Bo'limlar mobilda pastda (MobileBottomNav) bo'lgani uchun yuqoridagi tablar yashiriladi */
+  .desktopTabsOnly {
+    display: none !important;
+  }
+
+  .tabsContainer {
+    position: sticky;
+    top: 56px;
+    z-index: 25;
+    padding: 4px;
+    gap: 4px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(8px);
+  }
+
+  .tabBtn {
+    padding: 7px 6px;
+    font-size: 11.5px;
+    gap: 4px;
+    border-radius: 7px;
+  }
+
+  .metricsGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+
+  .metricCard {
+    padding: 10px 12px;
+    gap: 8px;
+    border-radius: 11px;
+  }
+
+  .metricIcon {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+  }
+
+  .metricValue {
+    font-size: 15px;
+    font-weight: 800;
+  }
+
+  .metricLabel {
+    font-size: 10px;
+    line-height: 1.25;
+  }
+
+  .contentCard {
+    padding: 13px 11px;
+    border-radius: 12px;
+    gap: 11px;
+  }
+
+  .sectionHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .sectionTitle {
+    font-size: 13.5px;
+    font-weight: 800;
+  }
+
+  .subfilterGroup {
+    width: 100%;
+    overflow-x: auto;
+    padding-bottom: 3px;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .subfilterGroup::-webkit-scrollbar {
+    display: none;
+  }
+
+  .subfilterBtn {
+    flex-shrink: 0;
+    padding: 3px 9px;
+    font-size: 11px;
+  }
+
+  /* Hide wide table on mobile, show distinct modern cards */
+  .tableWrapper {
+    display: none;
+  }
+
+  .mobileCardsList {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+  }
+
+  .gradeMobileCard {
+    padding: 12px 13px;
+    border-radius: 11px;
+    gap: 8px;
+  }
+
+  .tagHomework,
+  .tagActivity {
+    font-size: 10.5px;
+    padding: 2px 7px;
+  }
+
+  .gradeMobileDate {
+    font-size: 11px;
+  }
+
+  .gradeMobileScore {
+    font-size: 12px;
+    padding: 3px 8px;
+  }
+
+  .gradeMobileBody {
+    padding: 7px 9px;
+    border-radius: 8px;
+  }
+
+  .gradeMobileRow {
+    font-size: 12px;
+  }
+
+  .gradeLabel {
+    font-size: 11px;
+  }
+
+  .gradeVal {
+    font-size: 12px;
+  }
+
+  .commentContent {
+    font-size: 11px;
+  }
+
+  .attMobileCard {
+    padding: 12px 13px;
+    border-radius: 11px;
+    gap: 8px;
+  }
+
+  .attMobileDate {
+    font-size: 11px;
+  }
+
+  .badgePresent,
+  .badgeAbsent,
+  .badgeLate {
+    font-size: 10.5px;
+    padding: 2px 7px;
+  }
+
+  .attMobileTopic {
+    font-size: 13px;
+    font-weight: 750;
+  }
+
+  .attMobileBody {
+    padding: 7px 9px;
+    border-radius: 8px;
+  }
+
+  .attMobileRow {
+    font-size: 12px;
+  }
+
+  .attMobileNote {
+    font-size: 11px;
+    padding: 4px 8px;
+  }
+
+  .scheduleGrid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .scheduleCard {
+    padding: 12px 13px;
+    border-radius: 11px;
+    gap: 10px;
+  }
+
+  .groupBadge {
+    font-size: 10.5px;
+  }
+
+  .scheduleTitle {
+    font-size: 14px;
+    font-weight: 800;
+  }
+
+  .scheduleItem {
+    font-size: 12px;
+  }
+
+  .scheduleTeacherBox {
+    font-size: 11.5px;
+  }
+
+  .teacherPhoneLink {
+    font-size: 11px;
+    padding: 3px 7px;
+  }
+}
+
+@media (max-width: 420px) {
+  .metricIcon {
+    display: none;
+  }
+
+  .metricContent {
+    align-items: center;
+    text-align: center;
+    width: 100%;
+  }
+
+  .tabsContainer {
+    top: 52px;
+  }
+
+  .tabBtn span {
+    font-size: 11px;
+  }
+}
+

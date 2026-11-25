@@ -1,0 +1,304 @@
+.navbar {
+  height: var(--header-height);
+  background-color: var(--bg-card);
+  border-bottom: 1px solid var(--border-color);
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.leftSection {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.menuBtn {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--text-main);
+  cursor: pointer;
+  padding: 8px;
+  border-radius: var(--radius-sm);
+}
+.menuBtn:hover {
+  background-color: var(--bg-main);
+}
+
+.searchBox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: var(--bg-main);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 8px 12px;
+  width: 280px;
+}
+
+.searchInput {
+  border: none;
+  background: transparent;
+  outline: none;
+  font-size: 13px;
+  width: 100%;
+  color: var(--text-main);
+}
+
+.rightSection {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.navbarLiveAlertBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: linear-gradient(135deg, #dc2626, #b91c1c);
+  color: #ffffff;
+  border: 1px solid #f87171;
+  padding: 6px 13px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 800;
+  cursor: pointer;
+  letter-spacing: 0.02em;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 10px rgba(220, 38, 38, 0.4);
+  animation: navbarAlertPulse 1.8s infinite ease-in-out;
+}
+
+.navbarLiveAlertBtn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(220, 38, 38, 0.6);
+}
+
+@keyframes navbarAlertPulse {
+  0% { box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.6); }
+  60% { box-shadow: 0 0 0 8px rgba(220, 38, 38, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(220, 38, 38, 0); }
+}
+
+.iconButton {
+  position: relative;
+  background: none;
+  border: 1px solid var(--border-color);
+  width: 38px;
+  height: 38px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.iconButton:hover {
+  background-color: var(--bg-main);
+  color: var(--text-main);
+}
+
+.iconButtonWithNotif {
+  border-color: #ef4444 !important;
+  background-color: #fef2f2 !important;
+  color: #dc2626 !important;
+  animation: buttonGlowFlash 1s infinite alternate ease-in-out;
+}
+
+.iconButtonWithNotif:hover {
+  background-color: #fee2e2 !important;
+  color: #b91c1c !important;
+}
+
+@keyframes buttonGlowFlash {
+  0% {
+    box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.6);
+    border-color: #ef4444;
+  }
+  50% {
+    box-shadow: 0 0 14px 3px rgba(239, 68, 68, 0.45);
+    border-color: #dc2626;
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.1);
+    border-color: #fca5a5;
+  }
+}
+
+.bellRinging {
+  animation: bellSwing 1.2s infinite ease-in-out, bellColorBlink 0.8s infinite alternate ease-in-out;
+  transform-origin: top center;
+  color: #dc2626 !important;
+}
+
+@keyframes bellSwing {
+  0% { transform: rotate(0); }
+  10% { transform: rotate(18deg); }
+  20% { transform: rotate(-16deg); }
+  30% { transform: rotate(14deg); }
+  40% { transform: rotate(-10deg); }
+  50% { transform: rotate(6deg); }
+  60% { transform: rotate(0); }
+  100% { transform: rotate(0); }
+}
+
+@keyframes bellColorBlink {
+  0% {
+    opacity: 1;
+    filter: drop-shadow(0 0 6px rgba(239, 68, 68, 0.8));
+  }
+  50% {
+    opacity: 0.35;
+    filter: drop-shadow(0 0 1px rgba(239, 68, 68, 0.2));
+  }
+  100% {
+    opacity: 1;
+    filter: drop-shadow(0 0 8px rgba(220, 38, 38, 0.9));
+  }
+}
+
+.badge {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  background: linear-gradient(135deg, #ef4444 0%, #b91c1c 100%);
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 800;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 5px;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #ffffff;
+  box-shadow: 0 2px 8px rgba(220, 38, 38, 0.5);
+  animation: badgeBlinkPulse 0.8s infinite alternate ease-in-out;
+}
+
+@keyframes badgeBlinkPulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+    box-shadow: 0 0 6px 2px rgba(239, 68, 68, 0.7);
+  }
+  50% {
+    transform: scale(1.18);
+    opacity: 0.8;
+    box-shadow: 0 0 14px 4px rgba(239, 68, 68, 0.9);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+    box-shadow: 0 0 4px 1px rgba(239, 68, 68, 0.4);
+  }
+}
+
+.userProfile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: var(--radius-md);
+  transition: background-color var(--transition-fast);
+}
+
+.userProfile:hover {
+  background-color: var(--bg-main);
+}
+
+.avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--color-primary), #818cf8);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.name {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.navbarCoinsBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #fef9c3 0%, #fef08a 100%);
+  border: 1.5px solid #facc15;
+  color: #854d0e;
+  font-size: 13px;
+  font-weight: 750;
+  padding: 6px 16px;
+  border-radius: 22px;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(250, 204, 21, 0.25);
+  transition: all 0.2s ease;
+}
+
+.userInfoCol {
+  display: flex;
+  flex-direction: column;
+}
+
+.coinsShortText,
+.alertShortText {
+  display: none;
+}
+
+@media (max-width: 1024px) {
+  .menuBtn {
+    display: block;
+  }
+  .searchBox {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .navbar {
+    padding: 0 10px;
+  }
+  .name {
+    display: none;
+  }
+  .userInfoCol {
+    display: none !important;
+  }
+  .coinsFullText,
+  .alertFullText {
+    display: none !important;
+  }
+  .coinsShortText,
+  .alertShortText {
+    display: inline !important;
+  }
+  .navbarCoinsBtn {
+    padding: 5px 9px;
+    gap: 4px;
+    font-size: 12px;
+  }
+  .navbarLiveAlertBtn {
+    padding: 5px 9px;
+    gap: 4px;
+    font-size: 11px;
+  }
+  .rightSection {
+    gap: 6px;
+  }
+}

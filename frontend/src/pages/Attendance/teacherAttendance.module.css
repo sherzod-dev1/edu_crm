@@ -1,0 +1,2178 @@
+/* Teacher Attendance Module CSS - 1 Oylik Davomat va Kunlik Boshqaruv */
+
+.sectionWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* KPI Stat Cards */
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.statCard {
+  background-color: #ffffff;
+  border-radius: 14px;
+  border: 1px solid #e2e8f0;
+  padding: 18px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.statCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.statLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.statLabel {
+  font-size: 12px;
+  font-weight: 700;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.statValue {
+  font-size: 22px;
+  font-weight: 800;
+  color: #0f172a;
+  line-height: 1.1;
+}
+
+.statSubtext {
+  font-size: 12px;
+  color: #94a3b8;
+  font-weight: 500;
+}
+
+.statIconBadge {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.statIconBlue {
+  background-color: #eff6ff;
+  color: #2563eb;
+}
+
+.statIconGreen {
+  background-color: #ecfdf5;
+  color: #10b981;
+}
+
+.statIconRed {
+  background-color: #fef2f2;
+  color: #ef4444;
+}
+
+.statIconYellow {
+  background-color: #fffbeb;
+  color: #f59e0b;
+}
+
+.statIconPurple {
+  background-color: #f5f3ff;
+  color: #8b5cf6;
+}
+
+/* Control Toolbar */
+.controlRow {
+  background-color: #ffffff;
+  border-radius: 14px;
+  border: 1px solid #e2e8f0;
+  padding: 14px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+}
+
+/* Month Selector & Navigation */
+.monthNavGroup {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.navBtn {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  background-color: #ffffff;
+  color: #475569;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.navBtn:hover:not(:disabled) {
+  background-color: #f1f5f9;
+  color: #0f172a;
+}
+
+.monthTitleBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #f8fafc;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  padding: 7px 14px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.todayPill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background-color: #2563eb;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 14px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.todayPill:hover {
+  background-color: #1d4ed8;
+}
+
+/* Mode Switcher Tabs (Oylik Jadval vs Kunlik Tafsilot) */
+.modeTabsGroup {
+  display: inline-flex;
+  background-color: #f1f5f9;
+  padding: 4px;
+  border-radius: 10px;
+  gap: 4px;
+}
+
+.modeTabBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 7px;
+  border: none;
+  background: transparent;
+  font-size: 13px;
+  font-weight: 600;
+  color: #64748b;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.modeTabBtn:hover:not(.modeTabBtnActive) {
+  color: #1e293b;
+}
+
+.modeTabBtnActive {
+  background-color: #ffffff;
+  color: #2563eb;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+/* Search and Quick Actions */
+.searchAndActions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.searchBox {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.searchIcon {
+  position: absolute;
+  left: 12px;
+  color: #94a3b8;
+  pointer-events: none;
+}
+
+.searchInput {
+  padding: 8px 14px 8px 36px;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  font-size: 13px;
+  background-color: #f8fafc;
+  outline: none;
+  min-width: 200px;
+  color: #1e293b;
+  transition: all 0.2s ease;
+}
+
+.searchInput:focus {
+  background-color: #ffffff;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.bulkPresentBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background-color: #ecfdf5;
+  color: #059669;
+  border: 1px solid #a7f3d0;
+  border-radius: 8px;
+  padding: 8px 14px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.bulkPresentBtn:hover:not(:disabled) {
+  background-color: #d1fae5;
+  color: #047857;
+}
+
+.bulkPresentBtn:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.spinIcon {
+  animation: spinBtn 1s linear infinite;
+}
+
+@keyframes spinBtn {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.saveChangesBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background-color: #2563eb;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 18px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  box-shadow: 0 2px 6px rgba(37, 99, 235, 0.25);
+}
+
+.saveChangesBtn:hover:not(:disabled) {
+  background-color: #1d4ed8;
+}
+
+.saveChangesBtn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ========================================================
+   MONTHLY MATRIX TABLE (1 OYLIK TO'LIQ DAVOMAT JADVALI)
+   ======================================================== */
+.matrixWrapper {
+  background-color: #ffffff;
+  border-radius: 14px;
+  border: 1px solid #e2e8f0;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  position: relative;
+}
+
+.matrixScrollable {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+
+.matrixScrollable::-webkit-scrollbar {
+  height: 6px;
+}
+
+.matrixScrollable::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 4px;
+}
+
+.matrixScrollable::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+.matrixScrollable::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+.matrixTable {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 12px;
+  text-align: center;
+}
+
+.matrixTable thead th {
+  background-color: #f8fafc;
+  color: #475569;
+  font-weight: 700;
+  padding: 8px 4px;
+  border-bottom: 2px solid #e2e8f0;
+  border-right: 1px solid #f1f5f9;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+.matrixTable tbody td {
+  padding: 8px 4px;
+  border-bottom: 1px solid #f1f5f9;
+  border-right: 1px solid #f8fafc;
+  vertical-align: middle;
+}
+
+/* Sticky Teacher Column on the left */
+.stickyIndexCol {
+  position: sticky;
+  left: 0;
+  background-color: #ffffff;
+  z-index: 10;
+  width: 36px;
+  min-width: 36px;
+  text-align: center;
+  font-weight: 600;
+  color: #94a3b8;
+  border-right: 1px solid #e2e8f0 !important;
+}
+
+thead th.stickyIndexCol {
+  background-color: #f8fafc;
+  z-index: 25;
+}
+
+.stickyTeacherCol {
+  position: sticky;
+  left: 36px;
+  background-color: #ffffff;
+  z-index: 10;
+  width: 220px;
+  min-width: 220px;
+  text-align: left;
+  padding-left: 12px !important;
+  padding-right: 12px !important;
+  border-right: 2px solid #cbd5e1 !important;
+  box-shadow: 4px 0 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+thead th.stickyTeacherCol {
+  background-color: #f8fafc;
+  z-index: 25;
+}
+
+tbody tr:hover .stickyIndexCol,
+tbody tr:hover .stickyTeacherCol {
+  background-color: #f8fafc;
+}
+
+/* Teacher Info in Matrix */
+.matrixTeacherInfo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.matrixAvatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.avatar0 { background: linear-gradient(135deg, #3b82f6, #1d4ed8); }
+.avatar1 { background: linear-gradient(135deg, #10b981, #059669); }
+.avatar2 { background: linear-gradient(135deg, #8b5cf6, #6d28d9); }
+.avatar3 { background: linear-gradient(135deg, #f59e0b, #d97706); }
+.avatar4 { background: linear-gradient(135deg, #ec4899, #be185d); }
+
+.matrixTeacherText {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  overflow: hidden;
+}
+
+.matrixTeacherName {
+  font-size: 13px;
+  font-weight: 700;
+  color: #0f172a;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.teacherLastName {
+  display: inline;
+}
+
+.teacherFirstName {
+  display: inline;
+  margin-left: 3px;
+}
+
+.matrixTeacherSpec {
+  font-size: 11px;
+  color: #64748b;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Day Header Cell */
+.dayHeaderCell {
+  min-width: 34px;
+  width: 34px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  user-select: none;
+}
+
+.dayNum {
+  font-size: 13px;
+  font-weight: 800;
+  color: #1e293b;
+}
+
+.dayWeekName {
+  font-size: 10px;
+  font-weight: 600;
+  color: #64748b;
+  text-transform: uppercase;
+}
+
+/* Sunday column */
+.sundayCol {
+  background-color: #f8fafc;
+}
+
+.sundayHeader {
+  background-color: #f1f5f9 !important;
+}
+
+.sundayHeader .dayNum,
+.sundayHeader .dayWeekName {
+  color: #ef4444;
+}
+
+/* Today column */
+.todayCol {
+  background-color: #eff6ff !important;
+}
+
+.todayHeader {
+  background-color: #dbeafe !important;
+  border-bottom: 2px solid #2563eb !important;
+}
+
+.todayHeader .dayNum {
+  color: #1d4ed8;
+  font-weight: 900;
+}
+
+.todayTag {
+  font-size: 9px;
+  background-color: #2563eb;
+  color: #ffffff;
+  padding: 1px 4px;
+  border-radius: 4px;
+  font-weight: 700;
+}
+
+/* Day Attendance Cell */
+.matrixCellWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.cellMarkBtn {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 1px solid transparent;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 11px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  user-select: none;
+  background: transparent;
+  color: #94a3b8;
+}
+
+.cellMarkBtn:hover {
+  transform: scale(1.15);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+}
+
+.cellEmpty {
+  border-color: #e2e8f0;
+  color: #cbd5e1;
+}
+
+.cellEmpty:hover {
+  border-color: #94a3b8;
+  background-color: #f8fafc;
+  color: #475569;
+}
+
+.cellPresent {
+  background-color: #10b981;
+  color: #ffffff;
+  box-shadow: 0 1px 4px rgba(16, 185, 129, 0.3);
+}
+
+.cellAbsent {
+  background-color: #ef4444;
+  color: #ffffff;
+  box-shadow: 0 1px 4px rgba(239, 68, 68, 0.3);
+}
+
+.cellLate {
+  background-color: #f59e0b;
+  color: #ffffff;
+  box-shadow: 0 1px 4px rgba(245, 158, 11, 0.3);
+}
+
+.cellExcused {
+  background-color: #8b5cf6;
+  color: #ffffff;
+  box-shadow: 0 1px 4px rgba(139, 92, 246, 0.3);
+}
+
+/* Future Columns and Disabled Cells */
+.futureCol {
+  background-color: #fbfcfd !important;
+}
+
+.futureHeader {
+  opacity: 0.7;
+}
+
+.cellFuture,
+.cellMarkBtn:disabled {
+  opacity: 0.35 !important;
+  cursor: not-allowed !important;
+  pointer-events: none !important;
+  transform: none !important;
+  box-shadow: none !important;
+  background-color: #f1f5f9 !important;
+  border-color: #e2e8f0 !important;
+  color: #94a3b8 !important;
+}
+
+.cellFuture:hover,
+.cellMarkBtn:disabled:hover {
+  transform: none !important;
+  box-shadow: none !important;
+  border-color: #e2e8f0 !important;
+}
+
+.statusBtn:disabled {
+  opacity: 0.35 !important;
+  cursor: not-allowed !important;
+  pointer-events: none !important;
+}
+
+/* Summary Columns on the right */
+.summaryHeaderCol {
+  min-width: 65px;
+  background-color: #f8fafc;
+  color: #334155;
+  font-size: 11px;
+}
+
+.summaryTotalCell {
+  font-weight: 800;
+  font-size: 12px;
+  padding: 8px 6px !important;
+}
+
+.badgePresentTotal {
+  background-color: #ecfdf5;
+  color: #059669;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-weight: 800;
+}
+
+.badgeAbsentTotal {
+  background-color: #fef2f2;
+  color: #dc2626;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-weight: 800;
+}
+
+.badgeLateTotal {
+  background-color: #fffbeb;
+  color: #d97706;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-weight: 800;
+}
+
+.badgePercentTotal {
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-weight: 900;
+}
+
+.percentGreen {
+  background-color: #ecfdf5;
+  color: #059669;
+}
+
+.percentYellow {
+  background-color: #fffbeb;
+  color: #d97706;
+}
+
+.percentRed {
+  background-color: #fef2f2;
+  color: #dc2626;
+}
+
+/* Popover for quick mark selection */
+.popoverMenu {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+  background-color: #ffffff;
+  border-radius: 10px;
+  border: 1px solid #cbd5e1;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.2);
+  padding: 6px;
+  display: flex;
+  gap: 4px;
+  margin-top: 4px;
+  animation: popIn 0.15s ease-out;
+}
+
+@keyframes popIn {
+  from { opacity: 0; transform: translateX(-50%) scale(0.9); }
+  to { opacity: 1; transform: translateX(-50%) scale(1); }
+}
+
+.popoverBtn {
+  border: none;
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  font-weight: 800;
+  font-size: 11px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.1s ease;
+}
+
+.popoverBtn:hover {
+  transform: scale(1.1);
+}
+
+.popoverClear {
+  background-color: #f1f5f9;
+  color: #64748b;
+}
+
+/* Quick Legend at bottom */
+.legendRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 18px;
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 12px;
+  color: #475569;
+}
+
+.legendItems {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.legendItem {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 600;
+}
+
+.legendBadge {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  font-weight: 800;
+}
+
+/* Toast Success */
+.toastSuccess {
+  background-color: #ecfdf5;
+  border: 1px solid #a7f3d0;
+  color: #065f46;
+  border-radius: 10px;
+  padding: 12px 18px;
+  font-size: 14px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.15);
+  animation: fadeIn 0.25s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Daily View Table styles (reused when mode === 'daily') */
+.dailyTableWrapper {
+  background-color: #ffffff;
+  border-radius: 14px;
+  border: 1px solid #e2e8f0;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.dailyTable {
+  width: 100%;
+  min-width: 780px;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.dailyTable thead {
+  background-color: #f8fafc;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.dailyTable th {
+  padding: 14px 18px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #475569;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.dailyTable td {
+  padding: 14px 18px;
+  border-bottom: 1px solid #f1f5f9;
+  vertical-align: middle;
+}
+
+.dailyTable tbody tr:hover {
+  background-color: #f8fafc;
+}
+
+/* Status Button Group for daily view */
+.statusButtonGroup {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background-color: #f8fafc;
+  padding: 4px;
+  border-radius: 10px;
+  border: 1px solid #e2e8f0;
+}
+
+.statusBtn {
+  border: none;
+  background: transparent;
+  padding: 6px 10px;
+  border-radius: 7px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  color: #64748b;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.statusBtn:hover {
+  background-color: #ffffff;
+  color: #0f172a;
+}
+
+.statusBtnActivePresent {
+  background-color: #10b981 !important;
+  color: #ffffff !important;
+  box-shadow: 0 2px 6px rgba(16, 185, 129, 0.35) !important;
+}
+
+.statusBtnActiveAbsent {
+  background-color: #ef4444 !important;
+  color: #ffffff !important;
+  box-shadow: 0 2px 6px rgba(239, 68, 68, 0.35) !important;
+}
+
+.statusBtnActiveLate {
+  background-color: #f59e0b !important;
+  color: #ffffff !important;
+  box-shadow: 0 2px 6px rgba(245, 158, 11, 0.35) !important;
+}
+
+.statusBtnActiveExcused {
+  background-color: #8b5cf6 !important;
+  color: #ffffff !important;
+  box-shadow: 0 2px 6px rgba(139, 92, 246, 0.35) !important;
+}
+
+.timeInput {
+  width: 90px;
+  padding: 6px 8px;
+  border-radius: 6px;
+  border: 1px solid #cbd5e1;
+  background-color: #ffffff;
+  font-size: 13px;
+  font-weight: 600;
+  color: #1e293b;
+  outline: none;
+}
+
+.noteInput {
+  width: 100%;
+  max-width: 220px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid #e2e8f0;
+  font-size: 12px;
+  background-color: #ffffff;
+  color: #1e293b;
+  outline: none;
+}
+
+/* ========================================================
+   BUXGALTERIYA PAYROLL & SYNC STYLES
+   ======================================================== */
+
+.buxgalterSyncBanner {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  color: #ffffff;
+  border-radius: 16px;
+  padding: 20px 24px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.syncBannerLeft {
+  flex: 1;
+}
+
+.syncBadgeLive {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: rgba(16, 185, 129, 0.15);
+  border: 1px solid rgba(16, 185, 129, 0.4);
+  color: #34d399;
+  font-size: 11px;
+  font-weight: 800;
+  padding: 4px 10px;
+  border-radius: 20px;
+  margin-bottom: 8px;
+  letter-spacing: 0.5px;
+}
+
+.syncPulseDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #10b981;
+  animation: pulseDot 1.8s infinite;
+}
+
+@keyframes pulseDot {
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+  70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+}
+
+.syncBannerTitle {
+  margin: 0 0 6px;
+  font-size: 17px;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+.syncBannerDesc {
+  margin: 0;
+  font-size: 13px;
+  color: #94a3b8;
+  line-height: 1.5;
+  max-width: 650px;
+}
+
+.syncBannerRight {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 12px;
+}
+
+.penaltySettingBox {
+  background-color: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 10px;
+  padding: 8px 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.penaltySettingLabel {
+  font-size: 12px;
+  color: #cbd5e1;
+  font-weight: 600;
+}
+
+.penaltyInputRow {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.penaltyInput {
+  width: 90px;
+  background-color: #ffffff;
+  color: #0f172a;
+  border: 1px solid #94a3b8;
+  border-radius: 6px;
+  padding: 4px 8px;
+  font-size: 13px;
+  font-weight: 700;
+  text-align: right;
+  outline: none;
+}
+
+.currencyTag {
+  font-size: 11px;
+  color: #94a3b8;
+  font-weight: 600;
+}
+
+.viewPayrollDirectBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: #ffffff;
+  border: none;
+  padding: 9px 18px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3);
+}
+
+.viewPayrollDirectBtn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.4);
+}
+
+.viewPayrollDirectBtnActive {
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.3);
+}
+
+.modeTabBtnPayroll {
+  color: #047857 !important;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.modeTabBtnPayroll:not(.modeTabBtnPayrollActive):hover {
+  background-color: #d1fae5 !important;
+  color: #065f46 !important;
+}
+
+.modeTabBtnPayrollActive {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%) !important;
+  color: #ffffff !important;
+  box-shadow: 0 2px 8px rgba(16, 185, 129, 0.35) !important;
+}
+
+.modeTabBtnPayrollActive:hover {
+  background: linear-gradient(135deg, #059669 0%, #047857 100%) !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.45) !important;
+}
+
+.modeTabBtnPayrollActive span,
+.modeTabBtnPayrollActive svg {
+  color: #ffffff !important;
+}
+
+.payrollLateCounterBadge {
+  background-color: #ef4444;
+  color: #ffffff;
+  font-size: 10.5px;
+  font-weight: 800;
+  padding: 2px 6px;
+  border-radius: 12px;
+  margin-left: 4px;
+}
+
+/* Payroll KPI Cards */
+.payrollStatsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.payrollStatCard {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 16px 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+}
+
+.payrollStatValue {
+  font-size: 20px;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 4px 0 2px;
+}
+
+.payrollStatValueRed {
+  color: #dc2626 !important;
+}
+
+.payrollStatValueGreen {
+  color: #059669 !important;
+}
+
+/* Payroll Table */
+.payrollTableWrapper {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+}
+
+.payrollTableTopBar {
+  padding: 14px 20px;
+  background-color: #f8fafc;
+  border-bottom: 1px solid #e2e8f0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.payrollTable {
+  width: 100%;
+  min-width: 820px;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.payrollTable th {
+  background-color: #f1f5f9;
+  color: #334155;
+  font-size: 12px;
+  font-weight: 800;
+  padding: 12px 14px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.payrollTable td {
+  padding: 12px 14px;
+  border-bottom: 1px solid #f1f5f9;
+  font-size: 13px;
+  color: #1e293b;
+  vertical-align: middle;
+}
+
+.payrollTable tr:hover {
+  background-color: #f8fafc;
+}
+
+.latePillClickable {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background-color: #fef2f2;
+  color: #dc2626;
+  border: 1px solid #fecaca;
+  padding: 4px 10px;
+  border-radius: 8px;
+  font-size: 11.5px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.latePillClickable:hover {
+  background-color: #fee2e2;
+  transform: translateY(-1px);
+}
+
+.latePillZero {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background-color: #f1f5f9;
+  color: #64748b;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.deductionBadge {
+  display: inline-block;
+  background-color: #fee2e2;
+  color: #b91c1c;
+  padding: 3px 8px;
+  border-radius: 6px;
+  font-weight: 800;
+  font-size: 12px;
+}
+
+.netSalaryBadge {
+  display: inline-block;
+  background-color: #ecfdf5;
+  color: #047857;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-weight: 900;
+  font-size: 13.5px;
+}
+
+.printBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background-color: #ffffff;
+  color: #334155;
+  border: 1px solid #cbd5e1;
+  padding: 7px 14px;
+  border-radius: 8px;
+  font-size: 12.5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.printBtn:hover {
+  background-color: #f1f5f9;
+  border-color: #94a3b8;
+}
+
+/* Late Details Modal */
+.modalBackdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(15, 23, 42, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 99999;
+  backdrop-filter: blur(3px);
+}
+
+.modalCard {
+  background-color: #ffffff;
+  border-radius: 16px;
+  width: 90%;
+  max-width: 560px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  animation: modalScaleIn 0.2s ease-out;
+}
+
+@keyframes modalScaleIn {
+  from { transform: scale(0.95); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.modalHeader {
+  padding: 16px 20px;
+  background-color: #f8fafc;
+  border-bottom: 1px solid #e2e8f0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.modalTitle {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.modalCloseBtn {
+  background: transparent;
+  border: none;
+  color: #64748b;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+}
+
+.modalCloseBtn:hover {
+  background-color: #e2e8f0;
+  color: #0f172a;
+}
+
+.modalBody {
+  padding: 20px;
+  max-height: 480px;
+  overflow-y: auto;
+}
+
+/* ========================================================
+   EXCEL (.XLSX) EXPORT BUTTON & TOOLBAR FILTERS
+   ======================================================== */
+.exportXlsxBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: linear-gradient(135deg, #107c41 0%, #0c6133 100%);
+  color: #ffffff;
+  border: 1px solid #0a522b;
+  border-radius: 9px;
+  padding: 8px 15px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 6px rgba(16, 124, 65, 0.25);
+  user-select: none;
+  white-space: nowrap;
+}
+
+.exportXlsxBtn:hover:not(:disabled) {
+  background: linear-gradient(135deg, #0d6535 0%, #084725 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(16, 124, 65, 0.35);
+}
+
+.exportXlsxBtn:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.exportXlsxBtn:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.excelBadgeTag {
+  background-color: rgba(255, 255, 255, 0.22);
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: 800;
+  padding: 2px 5px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.toolbarFilterSelect {
+  border: 1px solid #cbd5e1;
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 7px 11px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #1e293b;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.toolbarFilterSelect:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+.resetFilterChipBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background-color: #fef2f2;
+  color: #dc2626;
+  border: 1px solid #fecaca;
+  border-radius: 8px;
+  padding: 6px 10px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.resetFilterChipBtn:hover {
+  background-color: #fee2e2;
+  color: #b91c1c;
+}
+
+.activeFilterNotice {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #eff6ff;
+  border: 1px solid #bfdbfe;
+  color: #1e40af;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-size: 13px;
+}
+
+.inlineResetFilterLink {
+  background: none;
+  border: none;
+  color: #2563eb;
+  font-weight: 700;
+  text-decoration: underline;
+  cursor: pointer;
+  padding: 0;
+  margin-left: 4px;
+}
+
+.inlineResetFilterLink:hover {
+  color: #1d4ed8;
+}
+
+.singleCenterBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background-color: #f1f5f9;
+  border: 1px solid #cbd5e1;
+  color: #0f172a;
+  border-radius: 8px;
+  padding: 7px 13px;
+  font-size: 13px;
+  font-weight: 700;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+.centerBadgeIcon {
+  color: #2563eb;
+}
+
+.centerBadgeText {
+  color: #1e293b;
+  letter-spacing: 0.01em;
+}
+
+.singleCenterBadgeModal {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+/* ========================================================
+   EXCEL EXPORT & ADVANCED FILTER MODAL
+   ======================================================== */
+.exportModalBackdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(15, 23, 42, 0.65);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100000;
+  backdrop-filter: blur(4px);
+  padding: 16px;
+}
+
+.exportModalCard {
+  background-color: #ffffff;
+  border-radius: 14px;
+  width: 100%;
+  max-width: 560px;
+  max-height: min(88vh, 600px);
+  box-shadow: 0 20px 45px -10px rgba(0, 0, 0, 0.32);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  animation: exportModalIn 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  margin: auto;
+}
+
+@keyframes exportModalIn {
+  from {
+    transform: scale(0.96) translateY(8px);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+}
+
+.exportModalHeader {
+  padding: 10px 18px;
+  background: linear-gradient(to right, #f8fafc, #f1f5f9);
+  border-bottom: 1px solid #e2e8f0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-shrink: 0;
+}
+
+.exportModalTitleGroup {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.excelIconWrapper {
+  width: 32px;
+  height: 32px;
+  border-radius: 9px;
+  background-color: #ecfdf5;
+  color: #107c41;
+  border: 1px solid #a7f3d0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.exportModalTitle {
+  margin: 0;
+  font-size: 14.5px;
+  font-weight: 800;
+  color: #0f172a;
+  letter-spacing: -0.01em;
+}
+
+.exportModalSubtitle {
+  margin: 1px 0 0 0;
+  font-size: 11px;
+  color: #64748b;
+  font-weight: 500;
+}
+
+.modalCloseBtn {
+  background: transparent;
+  border: none;
+  color: #64748b;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s ease;
+}
+
+.modalCloseBtn:hover {
+  background-color: #e2e8f0;
+  color: #0f172a;
+}
+
+.exportModalBody {
+  padding: 12px 18px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+  flex: 1;
+  min-height: 0;
+  scrollbar-width: thin;
+  scrollbar-color: #cbd5e1 transparent;
+}
+
+.exportModalBody::-webkit-scrollbar {
+  width: 5px;
+}
+
+.exportModalBody::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.exportModalBody::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+.exportModalBody::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Excel AutoFilter Highlight Notice */
+.autofilterNoticeCard {
+  background: linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 100%);
+  border: 1px solid #86efac;
+  border-radius: 8px;
+  padding: 6px 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.autofilterNoticeIcon {
+  color: #16a34a;
+  flex-shrink: 0;
+}
+
+.noticeTextGroup {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.autofilterNoticeTitle {
+  margin: 0;
+  font-size: 11.5px;
+  font-weight: 800;
+  color: #14532d;
+}
+
+.autofilterNoticeText {
+  margin: 0;
+  font-size: 11px;
+  color: #166534;
+  line-height: 1.35;
+  font-weight: 500;
+}
+
+/* Modal Form Sections */
+.modalSection {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.sectionLabel {
+  font-size: 12px;
+  font-weight: 700;
+  color: #1e293b;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.periodModesGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 6px;
+}
+
+.periodOptionCard {
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 6px 10px;
+  background-color: #ffffff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.15s ease;
+  user-select: none;
+}
+
+.periodOptionCard:hover {
+  border-color: #cbd5e1;
+  background-color: #f8fafc;
+}
+
+.periodOptionActive {
+  border-color: #107c41;
+  background-color: #f0fdf4;
+  box-shadow: 0 0 0 1px #107c41;
+}
+
+.periodRadioDot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 1.5px solid #cbd5e1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.periodRadioDotActive {
+  border-color: #107c41;
+}
+
+.periodRadioDotInner {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #107c41;
+}
+
+.periodOptionTitle {
+  font-size: 11.5px;
+  font-weight: 700;
+  color: #1e293b;
+  line-height: 1.2;
+}
+
+.periodOptionSub {
+  font-size: 10px;
+  color: #64748b;
+  margin-top: 1px;
+  line-height: 1.2;
+}
+
+.periodCustomInputsRow {
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 7px 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.inputGroupMini {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+  min-width: 110px;
+}
+
+.inputLabelMini {
+  font-size: 10px;
+  font-weight: 700;
+  color: #475569;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.inputMini {
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  padding: 4px 8px;
+  font-size: 11.5px;
+  font-weight: 600;
+  color: #0f172a;
+  background-color: #ffffff;
+  outline: none;
+  height: 29px;
+}
+
+.inputMini:focus {
+  border-color: #107c41;
+}
+
+/* 3-Column Filters Grid */
+.filtersRowGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.filterField {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.filterFieldLabel {
+  font-size: 11px;
+  font-weight: 700;
+  color: #475569;
+}
+
+.filterFieldSelect {
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  padding: 4px 8px;
+  font-size: 11.5px;
+  font-weight: 600;
+  color: #1e293b;
+  background-color: #ffffff;
+  outline: none;
+  cursor: pointer;
+  height: 31px;
+  transition: all 0.15s ease;
+}
+
+.filterFieldSelect:focus {
+  border-color: #107c41;
+  box-shadow: 0 0 0 2px rgba(16, 124, 65, 0.12);
+}
+
+/* Sheet Checkboxes */
+.sheetsCheckboxList {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.sheetCheckboxCard {
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 6px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  background-color: #ffffff;
+  transition: all 0.15s ease;
+  user-select: none;
+}
+
+.sheetCheckboxCard:hover {
+  background-color: #f8fafc;
+  border-color: #cbd5e1;
+}
+
+.sheetCheckboxCardChecked {
+  background-color: #f0fdf4;
+  border-color: #86efac;
+}
+
+.sheetCheckboxLeft {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  min-width: 0;
+}
+
+.customCheckbox {
+  width: 16px;
+  height: 16px;
+  border-radius: 4px;
+  border: 1.5px solid #cbd5e1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  transition: all 0.15s ease;
+  flex-shrink: 0;
+}
+
+.customCheckboxChecked {
+  background-color: #107c41;
+  border-color: #107c41;
+  color: #ffffff;
+}
+
+.sheetTitleText {
+  font-size: 11.5px;
+  font-weight: 700;
+  color: #1e293b;
+  line-height: 1.2;
+}
+
+.sheetDescText {
+  font-size: 10.5px;
+  color: #64748b;
+  margin-top: 1px;
+  line-height: 1.2;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.sheetTagPill {
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 5px;
+  background-color: #e2e8f0;
+  color: #475569;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.sheetTagPillGreen {
+  background-color: #dcfce7;
+  color: #15803d;
+}
+
+/* Modal Footer */
+.exportModalFooter {
+  padding: 10px 18px;
+  background-color: #f8fafc;
+  border-top: 1px solid #e2e8f0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.modalCancelBtn {
+  border: 1px solid #cbd5e1;
+  background-color: #ffffff;
+  color: #475569;
+  border-radius: 7px;
+  padding: 6px 13px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.modalCancelBtn:hover {
+  background-color: #f1f5f9;
+  color: #0f172a;
+}
+
+.modalActionButtonsGroup {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.quickExportInModalBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  border: 1px solid #cbd5e1;
+  background-color: #ffffff;
+  color: #0f172a;
+  border-radius: 7px;
+  padding: 6px 12px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.quickExportInModalBtn:hover {
+  background-color: #f1f5f9;
+}
+
+.submitExportModalBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: linear-gradient(135deg, #107c41 0%, #0d6535 100%);
+  color: #ffffff;
+  border: none;
+  border-radius: 7px;
+  padding: 7px 16px;
+  font-size: 12.5px;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(16, 124, 65, 0.28);
+  transition: all 0.15s ease;
+}
+
+.submitExportModalBtn:hover:not(:disabled) {
+  background: linear-gradient(135deg, #0d6535 0%, #094a26 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(16, 124, 65, 0.35);
+}
+
+.submitExportModalBtn:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+@media (max-height: 720px) {
+  .exportModalCard {
+    max-height: 94vh;
+  }
+  .exportModalBody {
+    gap: 8px;
+    padding: 8px 14px;
+  }
+  .autofilterNoticeCard {
+    padding: 4px 8px;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Matrix Table Mobile Optimization */
+  .stickyIndexCol {
+    width: 26px !important;
+    min-width: 26px !important;
+    max-width: 26px !important;
+    padding: 6px 1px !important;
+    font-size: 11px !important;
+    left: 0 !important;
+  }
+
+  thead th.stickyIndexCol {
+    font-size: 11px !important;
+    padding: 8px 1px !important;
+  }
+
+  .stickyTeacherCol {
+    left: 26px !important;
+    width: 94px !important;
+    min-width: 94px !important;
+    max-width: 98px !important;
+    padding: 6px 3px !important;
+    box-shadow: 2px 0 6px -1px rgba(0, 0, 0, 0.08) !important;
+  }
+
+  thead th.stickyTeacherCol {
+    font-size: 10px !important;
+    letter-spacing: 0 !important;
+    text-align: center !important;
+    padding: 8px 2px !important;
+  }
+
+  .matrixTeacherInfo {
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    gap: 3px !important;
+  }
+
+  .matrixAvatar {
+    width: 24px !important;
+    height: 24px !important;
+    font-size: 10px !important;
+    margin: 0 auto !important;
+  }
+
+  .matrixTeacherText {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    gap: 1px !important;
+    width: 100% !important;
+    max-width: 88px !important;
+  }
+
+  .matrixTeacherName {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    white-space: normal !important;
+    line-height: 1.15 !important;
+    width: 100% !important;
+  }
+
+  .teacherLastName {
+    display: block !important;
+    font-size: 11px !important;
+    font-weight: 800 !important;
+    color: #0f172a !important;
+    line-height: 1.15 !important;
+    word-break: break-word !important;
+  }
+
+  .teacherFirstName {
+    display: block !important;
+    font-size: 10px !important;
+    font-weight: 600 !important;
+    color: #334155 !important;
+    line-height: 1.15 !important;
+    margin-left: 0 !important;
+    word-break: break-word !important;
+  }
+
+  .matrixTeacherSpec {
+    display: block !important;
+    font-size: 8.5px !important;
+    color: #64748b !important;
+    line-height: 1.1 !important;
+    max-width: 86px !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    margin-top: 1px !important;
+  }
+
+  .dayHeaderCell {
+    min-width: 30px !important;
+    width: 30px !important;
+    gap: 1px !important;
+  }
+
+  .dayNum {
+    font-size: 12px !important;
+  }
+
+  .dayWeekName {
+    font-size: 9px !important;
+  }
+
+  .cellMarkBtn {
+    width: 26px !important;
+    height: 26px !important;
+    font-size: 10px !important;
+  }
+
+  .matrixTable thead th {
+    padding: 6px 2px !important;
+  }
+
+  .matrixTable tbody td {
+    padding: 6px 2px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .stickyIndexCol {
+    width: 24px !important;
+    min-width: 24px !important;
+    max-width: 24px !important;
+    font-size: 10px !important;
+    left: 0 !important;
+  }
+
+  thead th.stickyIndexCol {
+    font-size: 10px !important;
+  }
+
+  .stickyTeacherCol {
+    left: 24px !important;
+    width: 86px !important;
+    min-width: 86px !important;
+    max-width: 90px !important;
+    padding: 5px 2px !important;
+  }
+
+  .matrixAvatar {
+    width: 22px !important;
+    height: 22px !important;
+    font-size: 9px !important;
+  }
+
+  .matrixTeacherText {
+    max-width: 82px !important;
+  }
+
+  .teacherLastName {
+    font-size: 10.5px !important;
+  }
+
+  .teacherFirstName {
+    font-size: 9.5px !important;
+  }
+
+  .matrixTeacherSpec {
+    font-size: 8px !important;
+    max-width: 80px !important;
+  }
+
+  .dayHeaderCell {
+    min-width: 28px !important;
+    width: 28px !important;
+  }
+
+  .cellMarkBtn {
+    width: 24px !important;
+    height: 24px !important;
+    font-size: 9.5px !important;
+  }
+}
+
+
+

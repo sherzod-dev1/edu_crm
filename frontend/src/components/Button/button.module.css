@@ -1,0 +1,197 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 12px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  white-space: nowrap;
+  user-select: none;
+  text-decoration: none;
+  letter-spacing: -0.01em;
+  position: relative;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+}
+
+.button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+.button:not(:disabled):hover {
+  transform: translateY(-1.5px);
+}
+
+.button:not(:disabled):active {
+  transform: scale(0.97);
+}
+
+/* 1. Primary - Modern Indigo / Purple Gradient */
+.primary {
+  background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(79, 70, 229, 0.28);
+}
+.primary:hover:not(:disabled) {
+  background: linear-gradient(135deg, #4f46e5 0%, #4338ca 100%);
+  box-shadow: 0 6px 18px rgba(79, 70, 229, 0.38);
+}
+
+/* 2. Pastel Purple - Dashboard Admin Style */
+.purple,
+.pastelPurple {
+  background: linear-gradient(135deg, #d8d3fd 0%, #c4b5fd 100%);
+  color: #1e1b4b;
+  border-color: rgba(196, 181, 253, 0.6);
+  box-shadow: 0 3px 10px rgba(196, 181, 253, 0.35);
+}
+.purple:hover:not(:disabled),
+.pastelPurple:hover:not(:disabled) {
+  background: linear-gradient(135deg, #c4b5fd 0%, #a78bfa 100%);
+  box-shadow: 0 6px 16px rgba(167, 139, 250, 0.4);
+}
+
+/* 3. Pastel Yellow - Dashboard Teacher Style */
+.yellow,
+.pastelYellow {
+  background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+  color: #78350f;
+  border-color: rgba(253, 230, 138, 0.7);
+  box-shadow: 0 3px 10px rgba(253, 230, 138, 0.35);
+}
+.yellow:hover:not(:disabled),
+.pastelYellow:hover:not(:disabled) {
+  background: linear-gradient(135deg, #fde68a 0%, #fcd34d 100%);
+  box-shadow: 0 6px 16px rgba(252, 211, 77, 0.4);
+}
+
+/* 4. Pastel Soft Blue - Dashboard Student Style */
+.blue,
+.softBlue,
+.pastelBlue {
+  background: linear-gradient(135deg, #e0e7ff 0%, #bae6fd 100%);
+  color: #0369a1;
+  border-color: rgba(186, 230, 253, 0.7);
+  box-shadow: 0 3px 10px rgba(186, 230, 253, 0.4);
+}
+.blue:hover:not(:disabled),
+.softBlue:hover:not(:disabled),
+.pastelBlue:hover:not(:disabled) {
+  background: linear-gradient(135deg, #bae6fd 0%, #7dd3fc 100%);
+  box-shadow: 0 6px 16px rgba(125, 211, 252, 0.45);
+}
+
+/* 5. Pastel Warm Yellow - Dashboard Staff Style */
+.warmYellow,
+.pastelWarmYellow {
+  background: linear-gradient(135deg, #fef9c3 0%, #fde047 100%);
+  color: #713f12;
+  border-color: rgba(253, 224, 71, 0.6);
+  box-shadow: 0 3px 10px rgba(253, 224, 71, 0.35);
+}
+.warmYellow:hover:not(:disabled),
+.pastelWarmYellow:hover:not(:disabled) {
+  background: linear-gradient(135deg, #fde047 0%, #eab308 100%);
+  box-shadow: 0 6px 16px rgba(234, 179, 8, 0.4);
+}
+
+/* 6. Secondary / Light Card Button */
+.secondary {
+  background-color: #f8fafc;
+  color: #334155;
+  border-color: #e2e8f0;
+}
+.secondary:hover:not(:disabled) {
+  background-color: #f1f5f9;
+  border-color: #cbd5e1;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.04);
+}
+
+/* 7. Danger - Coral Red */
+.danger {
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.25);
+}
+.danger:hover:not(:disabled) {
+  background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+  box-shadow: 0 6px 16px rgba(220, 38, 38, 0.35);
+}
+
+/* 8. Success - Emerald Green */
+.success {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.25);
+}
+.success:hover:not(:disabled) {
+  background: linear-gradient(135deg, #059669 0%, #047857 100%);
+  box-shadow: 0 6px 16px rgba(5, 150, 105, 0.35);
+}
+
+/* 9. Outline */
+.outline {
+  background-color: transparent;
+  border-color: #cbd5e1;
+  color: #334155;
+}
+.outline:hover:not(:disabled) {
+  background-color: #f8fafc;
+  border-color: #94a3b8;
+  color: #0f172a;
+}
+
+/* 10. Ghost */
+.ghost {
+  background-color: transparent;
+  color: #64748b;
+}
+.ghost:hover:not(:disabled) {
+  background-color: #f1f5f9;
+  color: #0f172a;
+}
+
+/* Sizes */
+.sm {
+  padding: 6px 14px;
+  font-size: 12px;
+  border-radius: 8px;
+}
+
+.md {
+  padding: 10px 20px;
+  font-size: 14px;
+  border-radius: 12px;
+}
+
+.lg {
+  padding: 13px 26px;
+  font-size: 15px;
+  border-radius: 14px;
+}
+
+.fullWidth {
+  width: 100%;
+}
+
+.spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: currentColor;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

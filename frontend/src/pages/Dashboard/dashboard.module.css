@@ -1,0 +1,2647 @@
+ /* ====================================================
+   DASHBOARD / BOSH SAHIFA STYLES
+   Pixel-perfect match with modern, clean, premium aesthetics
+==================================================== */
+
+ .dashboardContainer {
+   display: flex;
+   flex-direction: column;
+   gap: 20px;
+   width: 100%;
+   max-width: 100%;
+   min-width: 0;
+   box-sizing: border-box;
+   overflow-x: hidden;
+   padding-bottom: 32px;
+   font-family: inherit;
+ }
+
+ /* ====================================================
+   1. GREETING / HEADER SECTION
+==================================================== */
+ .welcomeSection {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   flex-wrap: wrap;
+   gap: 16px;
+ }
+
+ .greetingTitle {
+   font-size: 24px;
+   font-weight: 800;
+   color: #0f172a;
+   margin: 0 0 6px 0;
+   letter-spacing: -0.02em;
+ }
+
+ .greetingSubtitle {
+   font-size: 14px;
+   color: #64748b;
+   margin: 0;
+   font-weight: 500;
+ }
+
+ .headerRight {
+   display: flex;
+   align-items: center;
+   gap: 12px;
+ }
+
+ .periodSelector {
+   display: flex;
+   align-items: center;
+   gap: 8px;
+   background: #ffffff;
+   border: 1px solid #e2e8f0;
+   border-radius: 12px;
+   padding: 8px 14px;
+   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+   transition: all 0.2s ease;
+ }
+
+ .periodSelector:hover {
+   border-color: #cbd5e1;
+ }
+
+ .calendarIcon {
+   color: #64748b;
+ }
+
+ .periodSelect {
+   border: none;
+   background: transparent;
+   font-size: 13.5px;
+   font-weight: 600;
+   color: #1e293b;
+   cursor: pointer;
+   outline: none;
+ }
+
+ @media (max-width: 768px) {
+   .welcomeSection {
+     flex-direction: column;
+     align-items: flex-start;
+     gap: 10px;
+     width: 100%;
+   }
+
+   .greetingTitle {
+     font-size: 19px;
+     line-height: 1.25;
+   }
+
+   .greetingSubtitle {
+     font-size: 12.5px;
+     line-height: 1.4;
+   }
+
+   .headerRight {
+     width: 100%;
+   }
+
+   .periodSelector {
+     width: 100%;
+     justify-content: space-between;
+   }
+
+   .periodSelect {
+     width: 100%;
+   }
+ }
+
+ /* ====================================================
+   2. TOP STATS CARDS (Teacher 2 Column Grid)
+==================================================== */
+ .topStatsGrid {
+   display: grid;
+   grid-template-columns: repeat(2, 1fr);
+   gap: 18px;
+ }
+
+ @media (max-width: 900px) {
+   .topStatsGrid {
+     grid-template-columns: 1fr;
+   }
+ }
+
+ /* ====================================================
+   2.1 MODERN 3D KPI NINE CARDS GRID (ADMIN DASHBOARD)
+==================================================== */
+ .statsGridNine {
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+   gap: 16px;
+   margin-bottom: 24px;
+ }
+
+ @media (min-width: 1700px) {
+   .statsGridNine {
+     grid-template-columns: repeat(9, 1fr);
+   }
+ }
+
+ @media (max-width: 1699px) and (min-width: 1250px) {
+   .statsGridNine {
+     grid-template-columns: repeat(5, 1fr);
+   }
+ }
+
+ @media (max-width: 1249px) and (min-width: 860px) {
+   .statsGridNine {
+     grid-template-columns: repeat(3, 1fr);
+   }
+ }
+
+ @media (max-width: 859px) {
+   .statsGridNine {
+     grid-template-columns: 1fr !important;
+     gap: 10px;
+   }
+
+   .card3d {
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+     text-align: center;
+     padding: 14px 14px 12px;
+     border-radius: 14px;
+     gap: 0;
+   }
+
+   .card3dTopStripe {
+     top: 0;
+     left: 0;
+     right: 0;
+     bottom: auto;
+     width: 100%;
+     height: 3.5px;
+     border-radius: 14px 14px 0 0;
+   }
+
+   .iconPod3d {
+     width: 40px;
+     height: 40px;
+     border-radius: 12px;
+     margin-bottom: 6px;
+     margin-top: 2px;
+   }
+
+   .iconPod3d svg {
+     width: 20px !important;
+     height: 20px !important;
+   }
+
+   .card3dTitle {
+     font-size: 12px;
+     font-weight: 700;
+     color: #475569;
+     margin-bottom: 4px;
+     min-height: auto;
+     text-align: center;
+     justify-content: center;
+     line-height: 1.25;
+   }
+
+   .card3dValue {
+     font-size: 24px;
+     font-weight: 850;
+     color: #0f172a;
+     margin-bottom: 6px;
+     line-height: 1.1;
+   }
+
+   .card3dBadge {
+     font-size: 10.5px;
+     padding: 3px 8px;
+     border-radius: 7px;
+     margin-top: 0;
+   }
+ }
+
+ /* 500px gacha bo'lgan ekranlar uchun mutanosib ixchamlashtirish */
+ @media (max-width: 520px) {
+   .statsGridNine {
+     gap: 8px;
+   }
+
+   .card3d {
+     padding: 11px 12px 10px;
+     border-radius: 12px;
+   }
+
+   .card3dTopStripe {
+     height: 3px;
+     border-radius: 12px 12px 0 0;
+   }
+
+   .iconPod3d {
+     width: 35px;
+     height: 35px;
+     border-radius: 10px;
+     margin-bottom: 5px;
+     margin-top: 1px;
+   }
+
+   .iconPod3d svg {
+     width: 17px !important;
+     height: 17px !important;
+   }
+
+   .card3dTitle {
+     font-size: 11px;
+     margin-bottom: 3px;
+     line-height: 1.2;
+   }
+
+   .card3dValue {
+     font-size: 20px;
+     margin-bottom: 5px;
+   }
+
+   .card3dBadge {
+     font-size: 9.5px;
+     padding: 2px 7px;
+     border-radius: 6px;
+   }
+ }
+
+ /* 400px gacha bo'lgan kichik ekranlar uchun mutanosib ixchamlashtirish */
+ @media (max-width: 400px) {
+   .statsGridNine {
+     gap: 7px;
+   }
+
+   .card3d {
+     padding: 9px 10px 8px;
+     border-radius: 10px;
+   }
+
+   .card3dTopStripe {
+     height: 2.5px;
+     border-radius: 10px 10px 0 0;
+   }
+
+   .iconPod3d {
+     width: 30px;
+     height: 30px;
+     border-radius: 8px;
+     margin-bottom: 4px;
+     margin-top: 0;
+   }
+
+   .iconPod3d svg {
+     width: 15px !important;
+     height: 15px !important;
+   }
+
+   .card3dTitle {
+     font-size: 10.5px;
+     margin-bottom: 2px;
+     line-height: 1.15;
+   }
+
+   .card3dValue {
+     font-size: 18px;
+     margin-bottom: 4px;
+   }
+
+   .card3dBadge {
+     font-size: 9px;
+     padding: 2px 6px;
+     border-radius: 5px;
+   }
+ }
+
+ .card3d {
+   background: #ffffff;
+   border-radius: 14px;
+   border: 1px solid rgba(226, 232, 240, 0.95);
+   padding: 14px 10px 12px;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: space-between;
+   text-align: center;
+   position: relative;
+   overflow: hidden;
+   cursor: pointer;
+   user-select: none;
+   box-shadow:
+     0 2px 4px rgba(15, 23, 42, 0.02),
+     0 8px 16px -3px rgba(15, 23, 42, 0.04),
+     inset 0 1px 0 rgba(255, 255, 255, 0.95),
+     inset 0 -2px 0 rgba(0, 0, 0, 0.02);
+   transition: transform 0.28s cubic-bezier(0.34, 1.56, 0.64, 1),
+     box-shadow 0.28s cubic-bezier(0.34, 1.56, 0.64, 1),
+     border-color 0.2s ease;
+ }
+
+ .card3d:hover {
+   transform: translateY(-4px) scale(1.015);
+   box-shadow:
+     0 12px 24px -6px var(--card-hover-shadow, rgba(37, 99, 235, 0.2)),
+     0 4px 8px -2px rgba(15, 23, 42, 0.04),
+     inset 0 1px 0 rgba(255, 255, 255, 1);
+   border-color: var(--card-hover-border, #bfdbfe);
+ }
+
+ .card3dTopStripe {
+   position: absolute;
+   top: 0;
+   left: 0;
+   right: 0;
+   height: 3.5px;
+   background: var(--card-stripe, #2563eb);
+   border-radius: 14px 14px 0 0;
+ }
+
+ .iconPod3d {
+   width: 38px;
+   height: 38px;
+   border-radius: 11px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   margin-bottom: 7px;
+   background: var(--icon-bg, #eff6ff);
+   color: var(--icon-color, #2563eb);
+   border: 1px solid var(--icon-border, #bfdbfe);
+   box-shadow:
+     0 4px 10px -2px var(--icon-glow, rgba(37, 99, 235, 0.2)),
+     inset 0 2px 4px rgba(255, 255, 255, 0.85),
+     inset 0 -2px 4px rgba(0, 0, 0, 0.04);
+   transition: transform 0.28s cubic-bezier(0.34, 1.56, 0.64, 1),
+     box-shadow 0.28s ease;
+ }
+
+ .card3d:hover .iconPod3d {
+   transform: scale(1.08) rotate(3deg);
+   box-shadow:
+     0 8px 16px -2px var(--icon-glow, rgba(37, 99, 235, 0.3)),
+     inset 0 2px 4px rgba(255, 255, 255, 0.95);
+ }
+
+ .card3dTitle {
+   font-size: 11.5px;
+   font-weight: 700;
+   color: #475569;
+   letter-spacing: -0.15px;
+   margin-bottom: 3px;
+   min-height: 26px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   text-align: center;
+   line-height: 1.25;
+ }
+
+ .card3dValue {
+   font-size: 22px;
+   font-weight: 850;
+   color: #0f172a;
+   letter-spacing: -0.03em;
+   line-height: 1.1;
+   margin-bottom: 5px;
+ }
+
+ .card3dBadge {
+   display: inline-flex;
+   align-items: center;
+   gap: 3px;
+   font-size: 10px;
+   font-weight: 700;
+   padding: 2px 6px;
+   border-radius: 6px;
+   background: #f8fafc;
+   color: #64748b;
+   border: 1px solid #e2e8f0;
+   transition: all 0.2s ease;
+   white-space: nowrap;
+ }
+
+ .card3d:hover .card3dBadge {
+   background: var(--icon-bg, #eff6ff);
+   color: var(--icon-color, #2563eb);
+   border-color: var(--icon-border, #bfdbfe);
+ }
+
+ .statCard {
+   background: #ffffff;
+   border: 1px solid #f1f5f9;
+   border-radius: 14px;
+   padding: 14px 16px;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+   transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+   position: relative;
+   overflow: hidden;
+   cursor: default;
+ }
+
+ @media (max-width: 768px) {
+   .statCard {
+     padding: 10px 12px;
+     border-radius: 12px;
+   }
+ }
+
+ @media (max-width: 500px) {
+   .statCard {
+     padding: 9px 10px;
+     border-radius: 10px;
+   }
+ }
+
+ @media (max-width: 400px) {
+   .statCard {
+     padding: 8px 8px;
+     border-radius: 9px;
+   }
+ }
+
+ .statCard:hover {
+   transform: translateY(-2px);
+   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+   border-color: #e2e8f0;
+ }
+
+ /* Specific Card Tint Borders on hover */
+ .statCardBlue:hover {
+   border-color: #93c5fd;
+ }
+
+ .statCardPurple:hover {
+   border-color: #c4b5fd;
+ }
+
+ .statCardGreen:hover {
+   border-color: #86efac;
+ }
+
+ .statCardOrange:hover {
+   border-color: #fed7aa;
+ }
+
+ .statCardHeader {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   margin-bottom: 12px;
+ }
+
+ .iconBox {
+   width: 48px;
+   height: 48px;
+   border-radius: 14px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-shrink: 0;
+ }
+
+ .iconBlue {
+   background: #eff6ff;
+   color: #3b82f6;
+ }
+
+ .iconPurple {
+   background: #f5f3ff;
+   color: #8b5cf6;
+ }
+
+ .iconGreen {
+   background: #ecfdf5;
+   color: #10b981;
+ }
+
+ .iconOrange {
+   background: #fff7ed;
+   color: #f97316;
+ }
+
+ .statTitleWrapper {
+   display: flex;
+   flex-direction: column;
+ }
+
+ .statTitle {
+   font-size: 13.5px;
+   font-weight: 600;
+   color: #64748b;
+   margin-bottom: 2px;
+ }
+
+ .statValue {
+   font-size: 26px;
+   font-weight: 800;
+   color: #0f172a;
+   letter-spacing: -0.02em;
+   line-height: 1.2;
+ }
+
+ .statTrendRow {
+   display: flex;
+   align-items: center;
+   gap: 6px;
+   margin-top: 10px;
+   font-size: 12.5px;
+ }
+
+ .trendBadge {
+   display: inline-flex;
+   align-items: center;
+   gap: 2px;
+   font-weight: 700;
+   color: #16a34a;
+ }
+
+ .trendText {
+   color: #94a3b8;
+   font-weight: 500;
+ }
+
+ /* ====================================================
+   3. MIDDLE ROW (3 CARDS: Line Chart, Donut Chart, Quick Actions)
+==================================================== */
+ .middleGrid {
+   display: grid;
+   grid-template-columns: 1.15fr 1fr 0.85fr;
+   gap: 18px;
+ }
+
+ @media (max-width: 1200px) {
+   .middleGrid {
+     grid-template-columns: 1fr 1fr;
+   }
+ }
+
+ @media (max-width: 820px) {
+   .middleGrid {
+     grid-template-columns: 1fr;
+   }
+ }
+
+ .weeklyScheduleGrid {
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+   gap: 12px;
+   margin-top: 12px;
+   width: 100%;
+   max-width: 100%;
+   box-sizing: border-box;
+ }
+
+ @media (max-width: 768px) {
+   .weeklyScheduleGrid {
+     grid-template-columns: 1fr !important;
+     gap: 10px;
+   }
+ }
+
+ .panelCard {
+   background: #ffffff;
+   border: 1px solid #f1f5f9;
+   border-radius: 14px;
+   padding: 16px 18px;
+   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+   display: flex;
+   flex-direction: column;
+   width: 100%;
+   max-width: 100%;
+   min-width: 0;
+   box-sizing: border-box;
+   overflow-x: hidden;
+ }
+
+ @media (max-width: 768px) {
+   .panelCard {
+     padding: 12px 10px;
+     border-radius: 12px;
+   }
+ }
+
+ @media (max-width: 500px) {
+   .panelCard {
+     padding: 10px 8px;
+     border-radius: 10px;
+   }
+
+   .panelTitle {
+     font-size: 13.5px;
+   }
+ }
+
+ @media (max-width: 400px) {
+   .panelCard {
+     padding: 8px 6px;
+     border-radius: 9px;
+   }
+
+   .panelTitle {
+     font-size: 12.5px;
+   }
+ }
+
+ .panelHeader {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   margin-bottom: 12px;
+ }
+
+ .panelTitle {
+   font-size: 15px;
+   font-weight: 800;
+   color: #0f172a;
+   margin: 0;
+   letter-spacing: -0.01em;
+ }
+
+ .panelSelect {
+   border: 1px solid #e2e8f0;
+   background: #f8fafc;
+   font-size: 12.5px;
+   font-weight: 600;
+   color: #475569;
+   padding: 5px 10px;
+   border-radius: 8px;
+   outline: none;
+   cursor: pointer;
+ }
+
+ .seeAllLink {
+   display: inline-flex;
+   align-items: center;
+   gap: 4px;
+   font-size: 13px;
+   font-weight: 700;
+   color: #2563eb;
+   text-decoration: none;
+   cursor: pointer;
+   transition: color 0.15s ease;
+ }
+
+ .seeAllLink:hover {
+   color: #1d4ed8;
+   text-decoration: underline;
+ }
+
+ /* Line Chart Area */
+ .chartContainer {
+   width: 100%;
+   height: 220px;
+   position: relative;
+   display: flex;
+   flex-direction: column;
+   justify-content: flex-end;
+ }
+
+ .svgChart {
+   width: 100%;
+   height: 100%;
+   overflow: visible;
+ }
+
+ /* Donut Chart Area */
+ .donutWrapper {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   gap: 16px;
+   height: 100%;
+   min-height: 200px;
+ }
+
+ .donutSvgBox {
+   width: 150px;
+   height: 150px;
+   position: relative;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-shrink: 0;
+ }
+
+ .donutCenterLabel {
+   position: absolute;
+   text-align: center;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   pointer-events: none;
+ }
+
+ .donutCenterNumber {
+   font-size: 20px;
+   font-weight: 800;
+   color: #0f172a;
+   line-height: 1;
+ }
+
+ .donutCenterSub {
+   font-size: 11.5px;
+   font-weight: 600;
+   color: #64748b;
+   margin-top: 2px;
+ }
+
+ .donutLegend {
+   display: flex;
+   flex-direction: column;
+   gap: 10px;
+   flex: 1;
+   min-width: 0;
+ }
+
+ .legendItem {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   font-size: 13px;
+   color: #334155;
+ }
+
+ .legendLeft {
+   display: flex;
+   align-items: center;
+   gap: 8px;
+   overflow: hidden;
+   text-overflow: ellipsis;
+   white-space: nowrap;
+ }
+
+ .legendDot {
+   width: 10px;
+   height: 10px;
+   border-radius: 50%;
+   flex-shrink: 0;
+ }
+
+ .legendValue {
+   font-weight: 700;
+   color: #0f172a;
+   font-size: 12.5px;
+   flex-shrink: 0;
+   margin-left: 8px;
+ }
+
+ /* Quick Actions Area */
+ .actionsList {
+   display: flex;
+   flex-direction: column;
+   gap: 10px;
+   height: 100%;
+   justify-content: space-between;
+ }
+
+ .actionBtn {
+   display: flex;
+   align-items: center;
+   gap: 12px;
+   width: 100%;
+   padding: 10px 14px;
+   border-radius: 12px;
+   border: 1px solid transparent;
+   font-size: 13.5px;
+   font-weight: 700;
+   text-align: left;
+   cursor: pointer;
+   transition: all 0.2s ease;
+ }
+
+ .actionBtn:hover {
+   transform: translateX(3px);
+ }
+
+ .actionBlue {
+   background: #eff6ff;
+   color: #2563eb;
+   border-color: #dbeafe;
+ }
+
+ .actionBlue:hover {
+   background: #dbeafe;
+ }
+
+ .actionGreen {
+   background: #ecfdf5;
+   color: #059669;
+   border-color: #d1fae5;
+ }
+
+ .actionGreen:hover {
+   background: #d1fae5;
+ }
+
+ .actionPurple {
+   background: #f5f3ff;
+   color: #7c3aed;
+   border-color: #ede9fe;
+ }
+
+ .actionPurple:hover {
+   background: #ede9fe;
+ }
+
+ .actionOrange {
+   background: #fff7ed;
+   color: #ea580c;
+   border-color: #ffedd5;
+ }
+
+ .actionOrange:hover {
+   background: #ffedd5;
+ }
+
+ .actionTeal {
+   background: #f0fdfa;
+   color: #0d9488;
+   border-color: #ccfbf1;
+ }
+
+ .actionTeal:hover {
+   background: #ccfbf1;
+ }
+
+ .actionIconBox {
+   width: 32px;
+   height: 32px;
+   border-radius: 8px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   background: #ffffff;
+   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+ }
+
+ /* ====================================================
+   4. BOTTOM ROW (3 CARDS: Recent Students, Schedule, Activities)
+==================================================== */
+ .bottomGrid {
+   display: grid;
+   grid-template-columns: 1.15fr 1fr 0.85fr;
+   gap: 18px;
+ }
+
+ @media (max-width: 1200px) {
+   .bottomGrid {
+     grid-template-columns: 1fr 1fr;
+   }
+ }
+
+ @media (max-width: 820px) {
+   .bottomGrid {
+     grid-template-columns: 1fr;
+   }
+ }
+
+ /* Recent Students Table */
+ .studentsTableWrapper {
+   overflow-x: auto;
+   margin-top: 4px;
+ }
+
+ .studentsTable {
+   width: 100%;
+   border-collapse: collapse;
+   font-size: 13px;
+ }
+
+ .studentsTable th {
+   text-align: left;
+   padding: 8px 10px;
+   color: #64748b;
+   font-weight: 700;
+   font-size: 12px;
+   border-bottom: 1px solid #f1f5f9;
+ }
+
+ .studentsTable td {
+   padding: 10px 10px;
+   border-bottom: 1px solid #f8fafc;
+   vertical-align: middle;
+ }
+
+ .studentsTable tr:last-child td {
+   border-bottom: none;
+ }
+
+ .studentCell {
+   display: flex;
+   align-items: center;
+   gap: 10px;
+ }
+
+ .avatarCircle {
+   width: 28px;
+   height: 28px;
+   border-radius: 50%;
+   background: #e0e7ff;
+   color: #4338ca;
+   font-size: 11px;
+   font-weight: 700;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-shrink: 0;
+ }
+
+ .studentName {
+   font-weight: 600;
+   color: #1e293b;
+   white-space: nowrap;
+ }
+
+ .courseBadge {
+   display: inline-block;
+   font-weight: 700;
+   font-size: 12px;
+   white-space: nowrap;
+ }
+
+ .courseBadgeBlue {
+   color: #2563eb;
+ }
+
+ .courseBadgePurple {
+   color: #8b5cf6;
+ }
+
+ .courseBadgeGreen {
+   color: #059669;
+ }
+
+ .courseBadgeOrange {
+   color: #ea580c;
+ }
+
+ .courseBadgeGray {
+   color: #64748b;
+ }
+
+ .groupBadge {
+   display: inline-block;
+   background: #f1f5f9;
+   color: #475569;
+   font-weight: 600;
+   font-size: 11.5px;
+   padding: 3px 8px;
+   border-radius: 6px;
+   white-space: nowrap;
+ }
+
+ .dateText {
+   color: #64748b;
+   font-size: 12px;
+   white-space: nowrap;
+ }
+
+ /* Schedule List */
+ .scheduleList {
+   display: flex;
+   flex-direction: column;
+   gap: 7px;
+   margin-top: 4px;
+ }
+
+ .scheduleItem {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   padding: 6px 10px;
+   background: #f8fafc;
+   border-radius: 9px;
+   border-left: 3.5px solid #3b82f6;
+   gap: 8px;
+   transition: background 0.15s ease;
+ }
+
+ .scheduleItem:hover {
+   background: #f1f5f9;
+ }
+
+ .scheduleLeft {
+   display: flex;
+   align-items: center;
+   gap: 12px;
+   min-width: 0;
+ }
+
+ .scheduleTime {
+   font-size: 12px;
+   font-weight: 700;
+   color: #334155;
+   white-space: nowrap;
+   font-variant-numeric: tabular-nums;
+ }
+
+ .scheduleCourseInfo {
+   display: flex;
+   align-items: center;
+   gap: 8px;
+   min-width: 0;
+ }
+
+ .scheduleRight {
+   display: flex;
+   align-items: center;
+   gap: 8px;
+   flex-shrink: 0;
+ }
+
+ .teacherAvatar {
+   width: 24px;
+   height: 24px;
+   border-radius: 50%;
+   background: #e2e8f0;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   font-size: 10px;
+   font-weight: 700;
+   color: #475569;
+ }
+
+ .teacherName {
+   font-size: 12px;
+   font-weight: 600;
+   color: #475569;
+   white-space: nowrap;
+ }
+
+ @media (max-width: 768px) {
+   .scheduleItem {
+     flex-direction: column;
+     align-items: stretch;
+     gap: 6px;
+     padding: 8px 10px;
+     border-radius: 9px;
+   }
+
+   .scheduleLeft {
+     display: flex;
+     flex-wrap: wrap;
+     align-items: center;
+     gap: 8px;
+     width: 100%;
+   }
+
+   .scheduleCourseInfo {
+     display: flex;
+     flex-wrap: wrap;
+     align-items: center;
+     gap: 6px;
+     width: 100%;
+   }
+
+   .courseBadge {
+     white-space: normal;
+     word-break: break-word;
+   }
+
+   .groupBadge {
+     white-space: normal;
+     word-break: break-word;
+   }
+
+   .scheduleRight {
+     display: flex;
+     align-items: center;
+     gap: 8px;
+     width: 100%;
+     justify-content: flex-start;
+     padding-top: 6px;
+     border-top: 1px dashed #e2e8f0;
+   }
+
+   .teacherName {
+     white-space: normal;
+     word-break: break-word;
+   }
+ }
+
+ @media (max-width: 500px) {
+   .scheduleItem {
+     padding: 6px 8px;
+     border-radius: 8px;
+     gap: 4px;
+   }
+
+   .scheduleTime {
+     font-size: 11px;
+   }
+
+   .courseBadge {
+     font-size: 11px;
+   }
+
+   .groupBadge {
+     font-size: 10px;
+     padding: 2px 6px;
+   }
+
+   .teacherName {
+     font-size: 11px;
+   }
+
+   .teacherAvatar {
+     width: 20px;
+     height: 20px;
+     font-size: 9px;
+   }
+ }
+
+ @media (max-width: 400px) {
+   .scheduleItem {
+     padding: 5px 6px;
+     border-radius: 7px;
+     gap: 3px;
+   }
+
+   .scheduleTime {
+     font-size: 10px;
+   }
+
+   .courseBadge {
+     font-size: 10px;
+   }
+
+   .groupBadge {
+     font-size: 9.5px;
+     padding: 1px 5px;
+   }
+
+   .teacherName {
+     font-size: 10px;
+   }
+
+   .teacherAvatar {
+     width: 18px;
+     height: 18px;
+     font-size: 8px;
+   }
+ }
+
+ /* Activities List */
+ .activityList {
+   display: flex;
+   flex-direction: column;
+   gap: 14px;
+   margin-top: 4px;
+ }
+
+ .activityItem {
+   display: flex;
+   align-items: flex-start;
+   gap: 12px;
+ }
+
+ .activityIconBox {
+   width: 34px;
+   height: 34px;
+   border-radius: 50%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-shrink: 0;
+   margin-top: 2px;
+ }
+
+ .activityContent {
+   display: flex;
+   flex-direction: column;
+   min-width: 0;
+ }
+
+ .activityTitle {
+   font-size: 13px;
+   font-weight: 700;
+   color: #1e293b;
+   margin-bottom: 1px;
+ }
+
+ .activityDetail {
+   font-size: 12px;
+   font-weight: 500;
+   color: #64748b;
+   margin-bottom: 2px;
+ }
+
+ .activityTime {
+   font-size: 11px;
+   color: #94a3b8;
+   font-weight: 500;
+ }
+
+ .emptyStateText {
+   text-align: center;
+   color: #94a3b8;
+   font-size: 13px;
+   padding: 24px 0;
+   font-weight: 500;
+ }
+
+ /* Teacher Dashboard Specific Styles */
+ .teacherGroupList {
+   display: flex;
+   flex-direction: column;
+   gap: 10px;
+ }
+
+ .teacherGroupItem {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   padding: 10px 14px;
+   background: #f8fafc;
+   border-radius: 12px;
+   border: 1px solid #f1f5f9;
+   transition: all 0.2s ease;
+   cursor: pointer;
+ }
+
+ .teacherGroupItem:hover {
+   background: #f1f5f9;
+   border-color: #e2e8f0;
+   transform: translateX(2px);
+ }
+
+ .teacherGroupLeft {
+   display: flex;
+   align-items: center;
+   gap: 12px;
+ }
+
+ .groupIconBox {
+   width: 36px;
+   height: 36px;
+   border-radius: 10px;
+   background: #ede9fe;
+   color: #7c3aed;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   font-weight: 700;
+ }
+
+ .teacherGroupName {
+   font-size: 13.5px;
+   font-weight: 700;
+   color: #1e293b;
+   display: block;
+ }
+
+ .teacherGroupCourse {
+   font-size: 11.5px;
+   font-weight: 500;
+   color: #64748b;
+ }
+
+ .teacherGroupRight {
+   display: flex;
+   align-items: center;
+   gap: 8px;
+ }
+
+ @media (max-width: 640px) {
+   .teacherGroupItem {
+     flex-direction: column;
+     align-items: stretch;
+     gap: 8px;
+     padding: 10px 12px;
+   }
+
+   .teacherGroupLeft {
+     width: 100%;
+     min-width: 0;
+   }
+
+   .teacherGroupName {
+     word-break: break-word;
+   }
+
+   .teacherGroupRight {
+     width: 100%;
+     justify-content: flex-end;
+   }
+ }
+
+ .studentCountBadge {
+   background: #eff6ff;
+   color: #2563eb;
+   padding: 3px 8px;
+   border-radius: 6px;
+   font-size: 12px;
+   font-weight: 700;
+ }
+
+ .takeAttendanceBtn {
+   display: inline-flex;
+   align-items: center;
+   gap: 6px;
+   padding: 6px 12px;
+   background: #2563eb;
+   color: #ffffff;
+   border: none;
+   border-radius: 8px;
+   font-size: 12px;
+   font-weight: 700;
+   cursor: pointer;
+   transition: background 0.15s ease;
+ }
+
+ .takeAttendanceBtn:hover {
+   background: #1d4ed8;
+ }
+
+ /* ====================================================
+   5. STUDENT DASHBOARD SPECIFIC STYLES
+==================================================== */
+ .studentHeaderRow {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   flex-wrap: wrap;
+   gap: 16px;
+   margin-bottom: 4px;
+ }
+
+ .studentDateOverline {
+   font-size: 13px;
+   font-weight: 600;
+   color: #64748b;
+   margin-bottom: 4px;
+   text-transform: capitalize;
+ }
+
+ .studentGreetingTitle {
+   font-size: 26px;
+   font-weight: 800;
+   color: #0f172a;
+   letter-spacing: -0.02em;
+   margin: 0;
+ }
+
+ .studentHeaderRight {
+   display: flex;
+   align-items: center;
+   gap: 12px;
+ }
+
+ .studentSearchBar {
+   display: flex;
+   align-items: center;
+   gap: 8px;
+   background: #ffffff;
+   border: 1px solid #e2e8f0;
+   border-radius: 12px;
+   padding: 8px 14px;
+   width: 260px;
+   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+   transition: border-color 0.2s ease, box-shadow 0.2s ease;
+ }
+
+ .studentSearchBar:focus-within {
+   border-color: #3b82f6;
+   box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+ }
+
+ .studentSearchInput {
+   border: none;
+   background: transparent;
+   outline: none;
+   font-size: 13.5px;
+   color: #1e293b;
+   width: 100%;
+ }
+
+ .studentSearchInput::placeholder {
+   color: #94a3b8;
+ }
+
+ .studentIconBtn {
+   width: 40px;
+   height: 40px;
+   border-radius: 12px;
+   border: 1px solid #e2e8f0;
+   background: #ffffff;
+   color: #475569;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   cursor: pointer;
+   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+   transition: all 0.2s ease;
+ }
+
+ .studentIconBtn:hover {
+   background: #f8fafc;
+   color: #1e293b;
+   border-color: #cbd5e1;
+ }
+
+ .studentAvatarCircle {
+   width: 40px;
+   height: 40px;
+   border-radius: 12px;
+   background: linear-align(135deg, #d97706, #f59e0b);
+   background-color: #f59e0b;
+   color: #ffffff;
+   font-weight: 800;
+   font-size: 15px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   box-shadow: 0 2px 6px rgba(245, 158, 11, 0.25);
+ }
+
+ /* Streak Card (Ketma-ket kunlar) - keeping for backwards compatibility if needed */
+ .streakCard {
+   background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+   color: #ffffff;
+   border: none !important;
+   box-shadow: 0 4px 14px rgba(37, 99, 235, 0.28) !important;
+ }
+
+ .streakTitle {
+   font-size: 13px;
+   font-weight: 700;
+   color: rgba(255, 255, 255, 0.85);
+   margin-bottom: 4px;
+ }
+
+ .streakValue {
+   font-size: 26px;
+   font-weight: 800;
+   color: #ffffff;
+   letter-spacing: -0.02em;
+ }
+
+ /* 3-Column Top Stats Grid for Student */
+ .studentTopStatsGrid {
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+   gap: 18px;
+ }
+
+ @media (max-width: 900px) {
+   .studentTopStatsGrid {
+     grid-template-columns: 1fr;
+   }
+ }
+
+ /* ====================================================
+   6. STUDENT HOMEWORK (VAZIFALAR) SECTION
+==================================================== */
+ .homeworkContainer {
+   display: flex;
+   flex-direction: column;
+   gap: 20px;
+   width: 100%;
+ }
+
+ .homeworkSectionCard {
+   background: #ffffff;
+   border: 1px solid #e2e8f0;
+   border-radius: 20px;
+   padding: 24px;
+   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.03);
+   display: flex;
+   flex-direction: column;
+   gap: 20px;
+ }
+
+ .homeworkHeaderRow {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   flex-wrap: wrap;
+   gap: 16px;
+ }
+
+ .homeworkTitleGroup {
+   display: flex;
+   flex-direction: column;
+   gap: 4px;
+ }
+
+ .homeworkMainTitle {
+   font-size: 20px;
+   font-weight: 800;
+   color: #0f172a;
+   margin: 0;
+   display: flex;
+   align-items: center;
+   gap: 10px;
+ }
+
+ .homeworkMainSubtitle {
+   font-size: 13.5px;
+   color: #64748b;
+   margin: 0;
+   font-weight: 500;
+ }
+
+ .homeworkSummaryStats {
+   display: flex;
+   align-items: center;
+   gap: 12px;
+   flex-wrap: wrap;
+ }
+
+ .summaryBadge {
+   display: inline-flex;
+   align-items: center;
+   gap: 6px;
+   padding: 6px 14px;
+   border-radius: 999px;
+   font-size: 12.5px;
+   font-weight: 700;
+   background: #f8fafc;
+   border: 1px solid #e2e8f0;
+   color: #334155;
+ }
+
+ .summaryBadgePending {
+   background: #fffbeb;
+   border-color: #fde68a;
+   color: #b45309;
+ }
+
+ .summaryBadgeSubmitted {
+   background: #eff6ff;
+   border-color: #bfdbfe;
+   color: #1d4ed8;
+ }
+
+ .summaryBadgeGraded {
+   background: #ecfdf5;
+   border-color: #a7f3d0;
+   color: #047857;
+ }
+
+ /* Filter & Controls Toolbar */
+ .homeworkFilterToolbar {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   flex-wrap: wrap;
+   gap: 14px;
+   padding: 14px 16px;
+   background: #f8fafc;
+   border-radius: 14px;
+   border: 1px solid #f1f5f9;
+ }
+
+ .homeworkFilterTabs {
+   display: flex;
+   align-items: center;
+   gap: 6px;
+   flex-wrap: wrap;
+ }
+
+ .homeworkFilterTabBtn {
+   padding: 7px 14px;
+   border-radius: 10px;
+   border: 1px solid transparent;
+   background: transparent;
+   font-size: 13px;
+   font-weight: 700;
+   color: #64748b;
+   cursor: pointer;
+   transition: all 0.2s ease;
+   display: inline-flex;
+   align-items: center;
+   gap: 6px;
+ }
+
+ .homeworkFilterTabBtn:hover {
+   color: #1e293b;
+   background: #ffffff;
+ }
+
+ .homeworkFilterTabBtnActive {
+   background: #ffffff;
+   color: #2563eb;
+   border-color: #e2e8f0;
+   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+ }
+
+ .homeworkRightControls {
+   display: flex;
+   align-items: center;
+   gap: 10px;
+   flex-wrap: wrap;
+ }
+
+ .homeworkSearchWrap {
+   display: flex;
+   align-items: center;
+   gap: 8px;
+   background: #ffffff;
+   border: 1px solid #e2e8f0;
+   border-radius: 10px;
+   padding: 7px 12px;
+   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.02);
+ }
+
+ .homeworkSearchInput {
+   border: none;
+   background: transparent;
+   outline: none;
+   font-size: 13px;
+   color: #1e293b;
+   width: 170px;
+ }
+
+ .homeworkCourseSelect {
+   border: 1px solid #e2e8f0;
+   background: #ffffff;
+   border-radius: 10px;
+   padding: 7px 12px;
+   font-size: 13px;
+   font-weight: 600;
+   color: #334155;
+   outline: none;
+   cursor: pointer;
+ }
+
+ /* Homework List & Cards */
+ .homeworkGrid {
+   display: flex;
+   flex-direction: column;
+   gap: 16px;
+ }
+
+ .homeworkCard {
+   background: #ffffff;
+   border: 1px solid #e2e8f0;
+   border-radius: 12px;
+   padding: 14px 18px;
+   transition: all 0.2s ease;
+   display: flex;
+   flex-direction: column;
+   gap: 10px;
+   position: relative;
+   overflow: hidden;
+ }
+
+ .homeworkCard:hover {
+   border-color: #cbd5e1;
+   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+ }
+
+ .homeworkCardTop {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   flex-wrap: wrap;
+   gap: 10px;
+ }
+
+ .homeworkMetaLeft {
+   display: flex;
+   align-items: center;
+   gap: 10px;
+   flex-wrap: wrap;
+ }
+
+ .courseTag {
+   display: inline-flex;
+   align-items: center;
+   gap: 6px;
+   padding: 4px 10px;
+   border-radius: 8px;
+   font-size: 12px;
+   font-weight: 700;
+ }
+
+ .statusPillPending {
+   display: inline-flex;
+   align-items: center;
+   gap: 5px;
+   padding: 4px 10px;
+   border-radius: 8px;
+   background: #fff7ed;
+   color: #ea580c;
+   border: 1px solid #fed7aa;
+   font-size: 12px;
+   font-weight: 700;
+ }
+
+ .statusPillSubmitted {
+   display: inline-flex;
+   align-items: center;
+   gap: 5px;
+   padding: 4px 10px;
+   border-radius: 8px;
+   background: #eff6ff;
+   color: #2563eb;
+   border: 1px solid #bfdbfe;
+   font-size: 12px;
+   font-weight: 700;
+ }
+
+ .statusPillGraded {
+   display: inline-flex;
+   align-items: center;
+   gap: 5px;
+   padding: 4px 10px;
+   border-radius: 8px;
+   background: #ecfdf5;
+   color: #059669;
+   border: 1px solid #a7f3d0;
+   font-size: 12px;
+   font-weight: 700;
+ }
+
+ .homeworkDueDate {
+   display: inline-flex;
+   align-items: center;
+   gap: 6px;
+   font-size: 12.5px;
+   font-weight: 600;
+   color: #64748b;
+ }
+
+ .homeworkDueDateUrgent {
+   color: #dc2626;
+   font-weight: 700;
+ }
+
+ .homeworkTitle {
+   font-size: 15px;
+   font-weight: 700;
+   color: #0f172a;
+   margin: 0;
+   letter-spacing: -0.01em;
+   line-height: 1.35;
+ }
+
+ .homeworkDesc {
+   font-size: 13px;
+   color: #64748b;
+   line-height: 1.45;
+   margin: 0;
+   display: -webkit-box;
+   -webkit-line-clamp: 2;
+   -webkit-box-orient: vertical;
+   overflow: hidden;
+ }
+
+ .homeworkTeacherRow {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   flex-wrap: wrap;
+   gap: 8px;
+   padding: 2px 0;
+   font-size: 12px;
+   color: #64748b;
+ }
+
+ .teacherNameMini {
+   font-size: 12px;
+   font-weight: 500;
+   color: #475569;
+ }
+
+ .assignedDateMini {
+   font-size: 11.5px;
+   color: #94a3b8;
+ }
+
+ /* Simplified Homework Footer with File Chips */
+ .homeworkCardFooter {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   flex-wrap: wrap;
+   gap: 10px;
+   margin-top: 4px;
+   padding-top: 8px;
+   border-top: 1px solid #f1f5f9;
+ }
+
+ .homeworkSimpleFiles {
+   display: flex;
+   align-items: center;
+   flex-wrap: wrap;
+   gap: 8px;
+ }
+
+ .simpleFileChip {
+   display: inline-flex;
+   align-items: center;
+   gap: 6px;
+   padding: 5px 10px;
+   background: #f8fafc;
+   border: 1px solid #e2e8f0;
+   border-radius: 6px;
+   font-size: 12px;
+   font-weight: 600;
+   color: #334155;
+   cursor: pointer;
+   transition: all 0.15s ease;
+ }
+
+ .simpleFileChip:hover {
+   background: #f1f5f9;
+   border-color: #cbd5e1;
+   color: #0f172a;
+ }
+
+ .simpleFileName {
+   max-width: 180px;
+   white-space: nowrap;
+   overflow: hidden;
+   text-overflow: ellipsis;
+ }
+
+ .simpleFileSize {
+   color: #94a3b8;
+   font-size: 11px;
+   font-weight: 500;
+ }
+
+ /* Downloadable Files Container */
+ .homeworkFilesBox {
+   background: #f8fafc;
+   border: 1px solid #e2e8f0;
+   border-radius: 10px;
+   padding: 8px 12px;
+   display: flex;
+   flex-direction: column;
+   gap: 8px;
+ }
+
+ .homeworkFilesHeader {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+ }
+
+ .homeworkFilesLabel {
+   font-size: 12px;
+   font-weight: 700;
+   color: #334155;
+   display: flex;
+   align-items: center;
+   gap: 6px;
+ }
+
+ .filesDownloadAllBtn {
+   background: transparent;
+   border: none;
+   color: #2563eb;
+   font-size: 11.5px;
+   font-weight: 700;
+   cursor: pointer;
+   display: inline-flex;
+   align-items: center;
+   gap: 4px;
+ }
+
+ .filesDownloadAllBtn:hover {
+   text-decoration: underline;
+ }
+
+ .homeworkFilesGrid {
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+   gap: 8px;
+ }
+
+ .fileCard {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   padding: 6px 10px;
+   background: #ffffff;
+   border-radius: 8px;
+   border: 1px solid #e2e8f0;
+   transition: all 0.2s ease;
+ }
+
+ .fileCard:hover {
+   border-color: #cbd5e1;
+   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+ }
+
+ .fileCardLeft {
+   display: flex;
+   align-items: center;
+   gap: 8px;
+   min-width: 0;
+ }
+
+ .fileIconBoxPdf {
+   width: 28px;
+   height: 28px;
+   border-radius: 6px;
+   background: #fef2f2;
+   color: #dc2626;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-shrink: 0;
+ }
+
+ .fileIconBoxWord {
+   width: 28px;
+   height: 28px;
+   border-radius: 6px;
+   background: #eff6ff;
+   color: #2563eb;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-shrink: 0;
+ }
+
+ .fileDetails {
+   display: flex;
+   flex-direction: column;
+   min-width: 0;
+ }
+
+ .fileName {
+   font-size: 12.5px;
+   font-weight: 700;
+   color: #1e293b;
+   white-space: nowrap;
+   overflow: hidden;
+   text-overflow: ellipsis;
+   max-width: 170px;
+ }
+
+ .fileSize {
+   font-size: 11px;
+   color: #94a3b8;
+   font-weight: 500;
+ }
+
+ .fileDownloadBtnPdf {
+   display: inline-flex;
+   align-items: center;
+   gap: 6px;
+   padding: 4px 10px;
+   background: #dc2626;
+   color: #ffffff;
+   border: none;
+   border-radius: 6px;
+   font-size: 11px;
+   font-weight: 700;
+   cursor: pointer;
+   transition: all 0.15s ease;
+   flex-shrink: 0;
+ }
+
+ .fileDownloadBtnPdf:hover {
+   background: #b91c1c;
+   transform: translateY(-1px);
+ }
+
+ .fileDownloadBtnWord {
+   display: inline-flex;
+   align-items: center;
+   gap: 5px;
+   padding: 4px 10px;
+   background: #2563eb;
+   color: #ffffff;
+   border: none;
+   border-radius: 6px;
+   font-size: 11px;
+   font-weight: 700;
+   cursor: pointer;
+   transition: all 0.15s ease;
+   flex-shrink: 0;
+ }
+
+ .fileDownloadBtnWord:hover {
+   background: #1d4ed8;
+   transform: translateY(-1px);
+ }
+
+ /* Feedback & Grade Box */
+ .teacherFeedbackCard {
+   background: #f0fdf4;
+   border: 1px solid #bbf7d0;
+   border-radius: 12px;
+   padding: 12px 16px;
+   display: flex;
+   align-items: flex-start;
+   gap: 12px;
+ }
+
+ .feedbackIconBox {
+   color: #16a34a;
+   margin-top: 2px;
+ }
+
+ .feedbackContent {
+   display: flex;
+   flex-direction: column;
+   gap: 3px;
+ }
+
+ .feedbackTitle {
+   font-size: 12.5px;
+   font-weight: 700;
+   color: #15803d;
+ }
+
+ .feedbackText {
+   font-size: 13px;
+   color: #166534;
+   margin: 0;
+   font-style: italic;
+ }
+
+ /* Homework Card Actions Bottom */
+ .homeworkCardActions {
+   display: flex;
+   align-items: center;
+   justify-content: flex-end;
+   gap: 8px;
+   padding-top: 2px;
+ }
+
+ .submitActionBtn {
+   display: inline-flex;
+   align-items: center;
+   gap: 5px;
+   padding: 6px 14px;
+   background: linear-gradient(135deg, #2563eb, #1d4ed8);
+   color: #ffffff;
+   border: none;
+   border-radius: 8px;
+   font-size: 12px;
+   font-weight: 700;
+   cursor: pointer;
+   box-shadow: 0 2px 6px rgba(37, 99, 235, 0.25);
+   transition: all 0.2s ease;
+ }
+
+ .submitActionBtn:hover {
+   transform: translateY(-1px);
+   box-shadow: 0 4px 12px rgba(37, 99, 235, 0.35);
+ }
+
+ .viewDetailsBtn {
+   display: inline-flex;
+   align-items: center;
+   gap: 5px;
+   padding: 6px 12px;
+   background: #f1f5f9;
+   color: #475569;
+   border: none;
+   border-radius: 8px;
+   font-size: 12px;
+   font-weight: 700;
+   cursor: pointer;
+   transition: all 0.2s ease;
+ }
+
+ .viewDetailsBtn:hover {
+   background: #e2e8f0;
+   color: #1e293b;
+ }
+
+ /* Empty State */
+ .homeworkEmptyState {
+   text-align: center;
+   padding: 48px 20px;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   gap: 12px;
+   background: #f8fafc;
+   border-radius: 16px;
+   border: 1px dashed #cbd5e1;
+ }
+
+ .homeworkEmptyIcon {
+   width: 56px;
+   height: 56px;
+   border-radius: 16px;
+   background: #eff6ff;
+   color: #2563eb;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+ }
+
+ .homeworkEmptyTitle {
+   font-size: 16px;
+   font-weight: 700;
+   color: #1e293b;
+   margin: 0;
+ }
+
+ .homeworkEmptyDesc {
+   font-size: 13.5px;
+   color: #64748b;
+   max-width: 360px;
+   margin: 0;
+ }
+
+ /* Submit Modal */
+ .modalBackdrop {
+   position: fixed;
+   top: 0;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   background: rgba(15, 23, 42, 0.5);
+   backdrop-filter: blur(4px);
+   z-index: 9999;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   padding: 20px;
+ }
+
+ .submitModalBox {
+   background: #ffffff;
+   border-radius: 20px;
+   width: 100%;
+   max-width: 520px;
+   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+   overflow: hidden;
+   animation: modalPop 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+   display: flex;
+   flex-direction: column;
+ }
+
+ @keyframes modalPop {
+   from {
+     opacity: 0;
+     transform: scale(0.95);
+   }
+
+   to {
+     opacity: 1;
+     transform: scale(1);
+   }
+ }
+
+ .submitModalHeader {
+   padding: 18px 22px;
+   border-bottom: 1px solid #f1f5f9;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+ }
+
+ .submitModalTitle {
+   font-size: 17px;
+   font-weight: 800;
+   color: #0f172a;
+   margin: 0;
+ }
+
+ .closeModalBtn {
+   background: transparent;
+   border: none;
+   color: #94a3b8;
+   cursor: pointer;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   border-radius: 8px;
+   padding: 4px;
+ }
+
+ .closeModalBtn:hover {
+   background: #f1f5f9;
+   color: #0f172a;
+ }
+
+ .submitModalBody {
+   padding: 22px;
+   display: flex;
+   flex-direction: column;
+   gap: 16px;
+ }
+
+ .fileDropZone {
+   border: 2px dashed #cbd5e1;
+   border-radius: 14px;
+   padding: 24px;
+   text-align: center;
+   background: #f8fafc;
+   cursor: pointer;
+   transition: all 0.2s ease;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   gap: 8px;
+ }
+
+ .fileDropZone:hover {
+   border-color: #2563eb;
+   background: #eff6ff;
+ }
+
+ .dropZoneIcon {
+   width: 44px;
+   height: 44px;
+   border-radius: 12px;
+   background: #e0e7ff;
+   color: #4338ca;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+ }
+
+ .dropZoneText {
+   font-size: 13.5px;
+   font-weight: 700;
+   color: #1e293b;
+   margin: 0;
+ }
+
+ .dropZoneSubtext {
+   font-size: 12px;
+   color: #94a3b8;
+   margin: 0;
+ }
+
+ .submissionCommentInput {
+   width: 100%;
+   border: 1px solid #e2e8f0;
+   border-radius: 12px;
+   padding: 12px;
+   font-size: 13.5px;
+   color: #1e293b;
+   outline: none;
+   resize: vertical;
+   min-height: 80px;
+   font-family: inherit;
+   box-sizing: border-box;
+ }
+
+ .submissionCommentInput:focus {
+   border-color: #2563eb;
+   box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+ }
+
+ .submitModalFooter {
+   padding: 16px 22px;
+   border-top: 1px solid #f1f5f9;
+   background: #f8fafc;
+   display: flex;
+   align-items: center;
+   justify-content: flex-end;
+   gap: 10px;
+ }
+
+ .cancelModalBtn {
+   padding: 8px 16px;
+   border-radius: 10px;
+   border: 1px solid #e2e8f0;
+   background: #ffffff;
+   font-size: 13px;
+   font-weight: 700;
+   color: #475569;
+   cursor: pointer;
+ }
+
+ .cancelModalBtn:hover {
+   background: #f1f5f9;
+ }
+
+ .confirmSubmitBtn {
+   padding: 8px 18px;
+   border-radius: 10px;
+   border: none;
+   background: #2563eb;
+   color: #ffffff;
+   font-size: 13px;
+   font-weight: 700;
+   cursor: pointer;
+   display: inline-flex;
+   align-items: center;
+   gap: 6px;
+ }
+
+ .confirmSubmitBtn:hover {
+   background: #1d4ed8;
+ }
+
+ /* Toast Floating Notification */
+ .floatingToast {
+   position: fixed;
+   bottom: 28px;
+   right: 28px;
+   background: #0f172a;
+   color: #ffffff;
+   padding: 12px 20px;
+   border-radius: 12px;
+   font-size: 13.5px;
+   font-weight: 700;
+   display: flex;
+   align-items: center;
+   gap: 10px;
+   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+   z-index: 10000;
+   animation: toastSlide 0.3s ease;
+ }
+
+ @keyframes toastSlide {
+   from {
+     opacity: 0;
+     transform: translateY(12px);
+   }
+
+   to {
+     opacity: 1;
+     transform: translateY(0);
+   }
+ }
+
+ /* Student Exams Section Styles */
+ .studentExamsContainer {
+   display: flex;
+   flex-direction: column;
+   gap: 20px;
+   width: 100%;
+ }
+
+ .examSectionCard {
+   background: #ffffff;
+   border: 1px solid #e2e8f0;
+   border-radius: 20px;
+   padding: 24px;
+   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.03);
+   display: flex;
+   flex-direction: column;
+   gap: 20px;
+ }
+
+ .examHeaderRow {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   flex-wrap: wrap;
+   gap: 16px;
+ }
+
+ .examMainTitle {
+   font-size: 20px;
+   font-weight: 800;
+   color: #0f172a;
+   margin: 0;
+   display: flex;
+   align-items: center;
+   gap: 10px;
+ }
+
+ .examMainSubtitle {
+   font-size: 13.5px;
+   color: #64748b;
+   margin: 4px 0 0 0;
+   font-weight: 500;
+ }
+
+ .examGrid {
+   display: flex;
+   flex-direction: column;
+   gap: 16px;
+ }
+
+ .studentExamCard {
+   background: #ffffff;
+   border: 1px solid #e2e8f0;
+   border-radius: 16px;
+   padding: 22px;
+   transition: all 0.2s ease;
+   display: flex;
+   flex-direction: column;
+   gap: 16px;
+   position: relative;
+   overflow: hidden;
+   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.02);
+ }
+
+ .studentExamCard:hover {
+   border-color: #cbd5e1;
+   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+ }
+
+ .examCardTop {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   flex-wrap: wrap;
+   gap: 10px;
+ }
+
+ .examMetaLeft {
+   display: flex;
+   align-items: center;
+   gap: 8px;
+   flex-wrap: wrap;
+ }
+
+ .examGroupTag {
+   display: inline-flex;
+   align-items: center;
+   gap: 5px;
+   padding: 4px 10px;
+   border-radius: 999px;
+   font-size: 12px;
+   font-weight: 700;
+   background: #f1f5f9;
+   color: #334155;
+   border: 1px solid #e2e8f0;
+ }
+
+ .examDateBadge {
+   display: inline-flex;
+   align-items: center;
+   gap: 6px;
+   font-size: 12.5px;
+   color: #475569;
+   font-weight: 600;
+   background: #f8fafc;
+   padding: 4px 10px;
+   border-radius: 8px;
+   border: 1px solid #e2e8f0;
+ }
+
+ .examCardTitle {
+   font-size: 17px;
+   font-weight: 800;
+   color: #0f172a;
+   margin: 0;
+   letter-spacing: -0.01em;
+ }
+
+ .examInfoGrid {
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+   gap: 12px;
+   background: #f8fafc;
+   padding: 14px 16px;
+   border-radius: 12px;
+   border: 1px solid #f1f5f9;
+ }
+
+ .examInfoItem {
+   display: flex;
+   flex-direction: column;
+   gap: 2px;
+ }
+
+ .examInfoLabel {
+   font-size: 11.5px;
+   font-weight: 700;
+   color: #94a3b8;
+   text-transform: uppercase;
+   letter-spacing: 0.03em;
+ }
+
+ .examInfoValue {
+   font-size: 13.5px;
+   font-weight: 700;
+   color: #1e293b;
+ }
+
+ /* Exam Questions File Highlight Box */
+ .examFileHighlightBox {
+   background: #eff6ff;
+   border: 1.5px solid #bfdbfe;
+   border-radius: 14px;
+   padding: 16px 18px;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   flex-wrap: wrap;
+   gap: 14px;
+   transition: all 0.2s ease;
+ }
+
+ .examFileHighlightBox:hover {
+   border-color: #93c5fd;
+   background: #ebf5ff;
+ }
+
+ .examFileLeft {
+   display: flex;
+   align-items: center;
+   gap: 14px;
+   min-width: 0;
+ }
+
+ .examFileIconBoxPdf {
+   width: 44px;
+   height: 44px;
+   border-radius: 12px;
+   background: #fee2e2;
+   color: #dc2626;
+   border: 1px solid #fecaca;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   font-size: 11.5px;
+   font-weight: 800;
+   flex-shrink: 0;
+ }
+
+ .examFileIconBoxWord {
+   width: 44px;
+   height: 44px;
+   border-radius: 12px;
+   background: #dbeafe;
+   color: #2563eb;
+   border: 1px solid #bfdbfe;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   font-size: 11.5px;
+   font-weight: 800;
+   flex-shrink: 0;
+ }
+
+ .examFileIconBoxZip {
+   width: 44px;
+   height: 44px;
+   border-radius: 12px;
+   background: #fef3c7;
+   color: #d97706;
+   border: 1px solid #fde68a;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   font-size: 11.5px;
+   font-weight: 800;
+   flex-shrink: 0;
+ }
+
+ .examFileMetaText {
+   display: flex;
+   flex-direction: column;
+   gap: 3px;
+   min-width: 0;
+ }
+
+ .examFileCategory {
+   font-size: 11px;
+   font-weight: 800;
+   color: #2563eb;
+   text-transform: uppercase;
+   letter-spacing: 0.05em;
+   display: flex;
+   align-items: center;
+   gap: 5px;
+ }
+
+ .examFileNameTitle {
+   font-size: 14px;
+   font-weight: 700;
+   color: #0f172a;
+   white-space: nowrap;
+   overflow: hidden;
+   text-overflow: ellipsis;
+   max-width: 450px;
+ }
+
+ .examFileSizeDesc {
+   font-size: 12px;
+   color: #64748b;
+   font-weight: 500;
+ }
+
+ .examDownloadActionBtn {
+   display: inline-flex;
+   align-items: center;
+   gap: 8px;
+   background: #2563eb;
+   color: #ffffff;
+   border: none;
+   border-radius: 10px;
+   padding: 10px 18px;
+   font-size: 13.5px;
+   font-weight: 700;
+   cursor: pointer;
+   transition: all 0.2s ease;
+   box-shadow: 0 4px 10px rgba(37, 99, 235, 0.2);
+   flex-shrink: 0;
+ }
+
+ .examDownloadActionBtn:hover {
+   background: #1d4ed8;
+   transform: translateY(-1px);
+   box-shadow: 0 6px 14px rgba(37, 99, 235, 0.3);
+ }
+
+ .examDownloadActionBtn:active {
+   transform: translateY(0);
+ }

@@ -1,0 +1,1664 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.headerActions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.viewToggle {
+  display: inline-flex;
+  background-color: #f1f5f9;
+  border-radius: 12px;
+  padding: 4px;
+  border: 1px solid var(--border-color);
+}
+
+.toggleBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  font-size: 13px;
+  font-weight: 600;
+  border: none;
+  background: transparent;
+  color: var(--text-muted);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.toggleBtnActive {
+  background-color: #ffffff;
+  color: var(--text-main);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+}
+
+/* Legend Row */
+.legendRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  background-color: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 16px 20px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+}
+
+.calendarNavGroup {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.monthHeading {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--text-main);
+  letter-spacing: -0.01em;
+}
+
+.navBtn {
+  background-color: #f8fafc;
+  border: 1px solid var(--border-color);
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s ease;
+}
+.navBtn:hover {
+  background-color: #e2e8f0;
+  color: var(--text-main);
+}
+
+.dayTypePills {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.dayPillTag {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: 6px;
+}
+
+.oddTag {
+  background-color: #ecfdf5;
+  color: #065f46;
+  border-left: 3px solid #10b981;
+}
+
+.evenTag {
+  background-color: #fdf2f8;
+  color: #831843;
+  border-left: 3px solid #ec4899;
+}
+
+.tagDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+}
+
+/* Calendar Schedule Grid with single unified 7-column layout */
+.calendarScrollWrapper {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  border-radius: 12px;
+  box-sizing: border-box;
+}
+
+.calendarScrollWrapper::-webkit-scrollbar {
+  height: 6px;
+}
+
+.calendarScrollWrapper::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 4px;
+}
+
+.calendarScrollWrapper::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+.calendarScrollWrapper::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+.calendarGrid {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(120px, 1fr));
+  background-color: #ffffff;
+  border: 2px solid #000000;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+  width: 100%;
+  min-width: 840px;
+  box-sizing: border-box;
+}
+
+.weekHeaderCell {
+  padding: 12px 8px;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 700;
+  color: #000000;
+  background-color: #f8fafc;
+  border-right: 1px solid #000000;
+  border-bottom: 2px solid #000000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  white-space: nowrap;
+}
+
+.weekHeaderCell:nth-child(7) {
+  border-right: none;
+}
+
+.calendarCell {
+  background-color: #ffffff;
+  min-height: 135px;
+  padding: 10px 8px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  border-right: 1px solid #000000;
+  border-bottom: 1px solid #000000;
+  box-sizing: border-box;
+  transition: background-color 0.15s ease;
+}
+
+.calendarCell:nth-child(7n) {
+  border-right: none;
+}
+
+.calendarCell:nth-last-child(-n + 7) {
+  border-bottom: none;
+}
+
+.calendarCell:hover {
+  background-color: #fbfcfe;
+}
+
+.cellOtherMonth {
+  background-color: #f9fafb;
+  opacity: 0.55;
+}
+
+.cellSunday {
+  background-color: #f8fafc;
+  background-image: repeating-linear-gradient(
+    -45deg,
+    rgba(241, 245, 249, 0.7),
+    rgba(241, 245, 249, 0.7) 10px,
+    #ffffff 10px,
+    #ffffff 20px
+  );
+}
+
+.sundayRestTag {
+  font-size: 11px;
+  font-weight: 600;
+  color: #94a3b8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  min-height: 50px;
+  text-align: center;
+  user-select: none;
+  font-style: italic;
+}
+
+.cellHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+
+.cellDayNumber {
+  font-size: 13px;
+  font-weight: 700;
+  color: #000000;
+}
+
+.cellToday .cellDayNumber {
+  background-color: #3b82f6;
+  color: #ffffff;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 12px;
+}
+
+.cellOtherMonthText {
+  font-size: 12px;
+  color: #94a3b8;
+}
+
+.addLessonCellBtn {
+  opacity: 0;
+  background: none;
+  border: none;
+  color: #3b82f6;
+  cursor: pointer;
+  padding: 2px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  transition: opacity 0.15s ease;
+}
+
+.calendarCell:hover .addLessonCellBtn {
+  opacity: 1;
+}
+
+/* Lesson Items inside Cell */
+.lessonsListInCell {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+}
+
+.lessonPill {
+  display: flex;
+  flex-direction: column;
+  padding: 6px 8px;
+  border-radius: 8px;
+  font-size: 11px;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  position: relative;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.lessonPill:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* 🟢 TOQ KUNLAR (Odd Days - Dush / Chor / Juma) */
+.lessonOdd {
+  background-color: #ecfdf5;
+  border: 1.5px solid #10b981;
+  border-left: 4px solid #059669;
+  color: #065f46;
+}
+.lessonOdd .pillCircle {
+  border-color: #059669;
+  background-color: #10b981;
+}
+
+/* 🟣 JUFT KUNLAR (Even Days - Sesh / Pay / Shan) */
+.lessonEven {
+  background-color: #fdf2f8;
+  border: 1.5px solid #ec4899;
+  border-left: 4px solid #be185d;
+  color: #831843;
+}
+.lessonEven .pillCircle {
+  border-color: #be185d;
+  background-color: #ec4899;
+}
+
+/* 🔵 Boshqa / Yakshanba */
+.lessonSpecial {
+  background-color: #f0f9ff;
+  border: 1.5px solid #38bdf8;
+  border-left: 4px solid #0284c7;
+  color: #075985;
+}
+
+/* 🔷 KURSLAR (Courses Schedule Pill) */
+.lessonCourse {
+  background-color: #eff6ff;
+  border: 1.5px solid #60a5fa;
+  border-left: 4px solid #2563eb;
+  color: #1e40af;
+}
+.lessonCourse .pillCircle {
+  border-color: #1d4ed8;
+  background-color: #2563eb;
+}
+
+.pillTopRow {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.pillCircle {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: 1.5px solid currentColor;
+  flex-shrink: 0;
+}
+
+.pillTitle {
+  font-weight: 700;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex: 1;
+}
+
+.pillTeacherRow {
+  display: flex;
+  align-items: center;
+  gap: 4.5px;
+  font-size: 10.5px;
+  font-weight: 600;
+  color: inherit;
+  opacity: 0.92;
+  margin-top: 3.5px;
+  margin-bottom: 2px;
+  line-height: 1.25;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.pillTeacherIcon {
+  flex-shrink: 0;
+  opacity: 0.85;
+}
+
+.pillTeacherName {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex: 1;
+}
+
+.pillTime {
+  font-size: 10.5px;
+  margin-top: 3px;
+  opacity: 0.9;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.pillMetaRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  margin-top: 4px;
+  flex-wrap: wrap;
+}
+
+.pillTimeBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  font-size: 10px;
+  font-weight: 700;
+  background: rgba(0, 0, 0, 0.06);
+  padding: 2px 5px;
+  border-radius: 4px;
+}
+
+.pillRoomBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  font-size: 10px;
+  font-weight: 700;
+  background: rgba(0, 0, 0, 0.08);
+  padding: 2px 5px;
+  border-radius: 4px;
+}
+
+.pillDayTypeBadge {
+  display: inline-block;
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  margin-top: 3px;
+  opacity: 0.95;
+}
+
+.pillMeta {
+  font-size: 10px;
+  margin-top: 2px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  opacity: 0.75;
+}
+
+/* Table View Styles */
+.card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  box-shadow: var(--shadow-sm);
+}
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.searchBox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 8px 14px;
+  width: 320px;
+}
+
+.searchInput {
+  border: none;
+  background: transparent;
+  outline: none;
+  font-size: 13px;
+  width: 100%;
+  color: var(--text-main);
+}
+
+.formGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.formActions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border-color);
+}
+
+.actionsCell {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.actionBtn {
+  background: none;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  padding: 6px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--text-muted);
+  transition: all var(--transition-fast);
+}
+
+.actionBtn:hover {
+  background-color: var(--bg-main);
+  color: var(--text-main);
+}
+
+.deleteBtn:hover {
+  background-color: var(--color-danger-light);
+  color: var(--color-danger);
+  border-color: rgba(239, 68, 68, 0.3);
+}
+
+.alert {
+  padding: 12px 16px;
+  border-radius: var(--radius-md);
+  background-color: var(--color-danger-light);
+  color: var(--color-danger);
+  font-size: 13px;
+  font-weight: 500;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.detailsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.detailItem {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.detailLabel {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+.detailValue {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.categoryFilterContainer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.categoryTabBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  border: 1.5px solid #e2e8f0;
+  background-color: #ffffff;
+  color: #64748b;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.categoryTabBtn:hover {
+  border-color: #cbd5e1;
+  background-color: #f8fafc;
+  color: #0f172a;
+}
+
+.categoryTabBtnActiveAll {
+  background-color: #eff6ff;
+  border-color: #2563eb;
+  color: #2563eb;
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.15);
+}
+
+.categoryTabBtnActiveOdd {
+  background-color: #ecfdf5;
+  border-color: #10b981;
+  color: #065f46;
+  box-shadow: 0 2px 8px rgba(16, 185, 129, 0.15);
+}
+
+.categoryTabBtnActiveEven {
+  background-color: #fdf2f8;
+  border-color: #ec4899;
+  color: #831843;
+  box-shadow: 0 2px 8px rgba(236, 72, 153, 0.15);
+}
+
+.categoryTabBtnActiveMyDays {
+  background-color: #eff6ff;
+  border-color: #2563eb;
+  color: #1d4ed8;
+  box-shadow: 0 2px 10px rgba(37, 99, 235, 0.2);
+  font-weight: 700;
+}
+
+.studentFreeDayTag {
+  font-size: 11px;
+  font-weight: 500;
+  color: #cbd5e1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  min-height: 40px;
+  text-align: center;
+  user-select: none;
+  font-style: italic;
+}
+
+.dimmedCell {
+  opacity: 0.35;
+  background-color: #f8fafc !important;
+  filter: grayscale(0.5);
+  pointer-events: none;
+}
+
+.highlightOddHeader {
+  background-color: #ecfdf5 !important;
+  color: #065f46 !important;
+  border-bottom: 3px solid #10b981 !important;
+}
+
+.highlightEvenHeader {
+  background-color: #fdf2f8 !important;
+  color: #831843 !important;
+  border-bottom: 3px solid #ec4899 !important;
+}
+
+@media (max-width: 900px) {
+  .calendarGrid {
+    min-width: 840px;
+  }
+}
+
+/* Related Categories Section in Details View */
+.relatedSection {
+  margin-top: 24px;
+  padding: 16px 20px;
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+}
+
+.relatedTitle {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.relatedGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 10px;
+}
+
+.relatedCard {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 10px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.relatedCard:hover {
+  border-color: #2563eb;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.08);
+  transform: translateY(-1px);
+}
+
+.relatedCardLeft {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.relatedCardIcon {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.relatedCardTexts {
+  display: flex;
+  flex-direction: column;
+}
+
+.relatedCardLabel {
+  font-size: 11px;
+  color: #64748b;
+  font-weight: 500;
+}
+
+.relatedCardValue {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: #0f172a;
+  max-width: 150px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.autoScheduleBanner {
+  background: linear-gradient(135deg, #f0fdf4 0%, #eff6ff 100%);
+  border: 1px solid #bbf7d0;
+  border-radius: 10px;
+  padding: 10px 16px;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 13px;
+  color: #1e293b;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+}
+
+.autoScheduleBannerLeft {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.autoScheduleIcon {
+  color: #16a34a;
+  flex-shrink: 0;
+}
+
+.oddDayBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background-color: #ecfdf5;
+  color: #065f46;
+  border: 1px solid #a7f3d0;
+  padding: 3px 8px;
+  border-radius: 6px;
+  font-size: 11.5px;
+  font-weight: 700;
+}
+
+.evenDayBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background-color: #fdf2f8;
+  color: #831843;
+  border: 1px solid #fbcfe8;
+  padding: 3px 8px;
+  border-radius: 6px;
+  font-size: 11.5px;
+  font-weight: 700;
+}
+
+.dayBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background-color: #f1f5f9;
+  color: #334155;
+  border: 1px solid #cbd5e1;
+  padding: 3px 8px;
+  border-radius: 6px;
+  font-size: 11.5px;
+  font-weight: 600;
+}
+
+.autoBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background-color: #ecfdf5;
+  color: #047857;
+  border: 1px solid #6ee7b7;
+  padding: 2px 7px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.timeBadgeTable {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.roomBadgeTable {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #475569;
+}
+
+/* ========================================================
+   LIVE LESSON MONITORING (DARS VAQTI NAZORATI)
+   ======================================================== */
+.liveMonitorContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.liveTopBanner {
+  background: linear-gradient(135deg, #1e293b, #0f172a);
+  color: #ffffff;
+  border-radius: 16px;
+  padding: 20px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.15);
+}
+
+.liveClockGroup {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.liveClockIcon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background-color: rgba(37, 99, 235, 0.2);
+  color: #60a5fa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(96, 165, 250, 0.3);
+}
+
+.liveTimeText {
+  font-size: 26px;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+  font-variant-numeric: tabular-nums;
+}
+
+.liveDateSubtitle {
+  font-size: 13px;
+  color: #94a3b8;
+  font-weight: 500;
+}
+
+.liveKpiGroup {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.liveKpiBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 10px;
+  padding: 8px 14px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.liveBadgeGreen {
+  border-color: rgba(16, 185, 129, 0.4) !important;
+  color: #34d399 !important;
+}
+
+.liveBadgeAmber {
+  border-color: rgba(245, 158, 11, 0.4) !important;
+  color: #fbbf24 !important;
+}
+
+.liveBadgeBlue {
+  border-color: rgba(96, 165, 250, 0.4) !important;
+  color: #93c5fd !important;
+}
+
+.liveTableCard {
+  background-color: #ffffff;
+  border-radius: 16px;
+  border: 1px solid var(--border-color);
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.liveTable {
+  width: 100%;
+  min-width: 800px;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.liveTable thead {
+  background-color: #f8fafc;
+  border-bottom: 2px solid #e2e8f0;
+}
+
+.liveTable th {
+  padding: 14px 18px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #475569;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.liveTable td {
+  padding: 16px 18px;
+  border-bottom: 1px solid #f1f5f9;
+  vertical-align: middle;
+}
+
+.liveTable tbody tr:hover {
+  background-color: #f8fafc;
+}
+
+.liveStatusPill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.pillInProgress {
+  background-color: #ecfdf5;
+  color: #059669;
+  border: 1px solid #10b981;
+  animation: pulseGreen 2s infinite ease-in-out;
+}
+
+@keyframes pulseGreen {
+  0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.4); }
+  70% { box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+}
+
+.pillUpcoming {
+  background-color: #fffbeb;
+  color: #d97706;
+  border: 1px solid #f59e0b;
+}
+
+.pillCompleted {
+  background-color: #f1f5f9;
+  color: #64748b;
+  border: 1px solid #cbd5e1;
+}
+
+.inspectActionBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background-color: #eff6ff;
+  color: #2563eb;
+  border: 1px solid #bfdbfe;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.inspectActionBtn:hover {
+  background-color: #2563eb;
+  color: #ffffff;
+  border-color: #2563eb;
+}
+
+/* ==========================================================================
+   NAZORATCHI LIVE MONITORING & 10-MIN ATTENDANCE ALERTS
+   ========================================================================== */
+
+/* Emergency Alert Banner */
+.emergencyAlertBanner {
+  background: linear-gradient(135deg, #fff1f2 0%, #fee2e2 100%);
+  border: 2px solid #f87171;
+  border-radius: 16px;
+  padding: 18px 22px;
+  box-shadow: 0 8px 24px rgba(239, 68, 68, 0.15);
+  animation: alertPulseBanner 2.5s infinite ease-in-out;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+@keyframes alertPulseBanner {
+  0% { box-shadow: 0 4px 16px rgba(239, 68, 68, 0.15); border-color: #f87171; }
+  50% { box-shadow: 0 8px 28px rgba(239, 68, 68, 0.35); border-color: #ef4444; }
+  100% { box-shadow: 0 4px 16px rgba(239, 68, 68, 0.15); border-color: #f87171; }
+}
+
+.alertBannerTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.alertBannerHeading {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.alertIconPulse {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background-color: #ef4444;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.4);
+  animation: iconShake 3s infinite ease-in-out;
+}
+
+@keyframes iconShake {
+  0%, 100% { transform: rotate(0deg); }
+  5% { transform: rotate(-10deg); }
+  10% { transform: rotate(10deg); }
+  15% { transform: rotate(-8deg); }
+  20% { transform: rotate(8deg); }
+  25% { transform: rotate(0deg); }
+}
+
+.alertBannerTitle {
+  font-size: 16px;
+  font-weight: 800;
+  color: #991b1b;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.alertBannerSub {
+  font-size: 13px;
+  color: #b91c1c;
+  margin: 2px 0 0;
+  font-weight: 500;
+}
+
+.alertItemsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 10px;
+}
+
+.alertMiniCard {
+  background: #ffffff;
+  border: 1px solid #fca5a5;
+  border-radius: 10px;
+  padding: 10px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  box-shadow: 0 2px 8px rgba(239, 68, 68, 0.08);
+}
+
+.alertMiniCardLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.alertRoomName {
+  font-size: 13px;
+  font-weight: 800;
+  color: #dc2626;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.alertGroupName {
+  font-size: 12px;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.alertOverdueTime {
+  font-size: 11px;
+  font-weight: 600;
+  color: #e11d48;
+}
+
+.alertActionBtn {
+  background-color: #dc2626;
+  color: #ffffff;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+}
+
+.alertActionBtn:hover {
+  background-color: #b91c1c;
+  transform: translateY(-1px);
+}
+
+/* Sub-Controls Row */
+.monitorControlsRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 6px;
+}
+
+.viewModeTabs {
+  display: inline-flex;
+  background-color: #f1f5f9;
+  padding: 4px;
+  border-radius: 10px;
+  gap: 4px;
+}
+
+.viewModeBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  border: none;
+  background: transparent;
+  color: #64748b;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.viewModeBtnActive {
+  background-color: #ffffff;
+  color: #0f172a;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.filterChipsGroup {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.filterChip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 700;
+  border: 1px solid #cbd5e1;
+  background-color: #ffffff;
+  color: #334155;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+.filterChip:hover {
+  background-color: #f1f5f9 !important;
+  color: #0f172a !important;
+  border-color: #94a3b8 !important;
+  transform: translateY(-1px);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+}
+
+.filterChipActive {
+  background-color: #1e293b !important;
+  color: #ffffff !important;
+  border-color: #1e293b !important;
+  box-shadow: 0 3px 10px rgba(15, 23, 42, 0.25) !important;
+}
+
+.filterChipActive:hover {
+  background-color: #0f172a !important;
+  color: #ffffff !important;
+  border-color: #0f172a !important;
+  transform: translateY(-1px);
+}
+
+/* Green Chip for Active Lessons (Dars ketayotganlar) */
+.filterChipGreen {
+  background-color: #ecfdf5 !important;
+  color: #047857 !important;
+  border-color: #a7f3d0 !important;
+}
+
+.filterChipGreen:hover {
+  background-color: #d1fae5 !important;
+  color: #065f46 !important;
+  border-color: #6ee7b7 !important;
+}
+
+.filterChipGreenActive {
+  background-color: #10b981 !important;
+  color: #ffffff !important;
+  border-color: #10b981 !important;
+  box-shadow: 0 3px 10px rgba(16, 185, 129, 0.35) !important;
+}
+
+.filterChipGreenActive:hover {
+  background-color: #059669 !important;
+  color: #ffffff !important;
+  border-color: #059669 !important;
+}
+
+/* Red Alert Chip for Attendance Danger */
+.filterChipAlert {
+  background-color: #fee2e2 !important;
+  color: #b91c1c !important;
+  border-color: #fca5a5 !important;
+  font-weight: 800;
+}
+
+.filterChipAlert:hover {
+  background-color: #fecaca !important;
+  color: #991b1b !important;
+  border-color: #f87171 !important;
+}
+
+.filterChipAlertActive {
+  background-color: #ef4444 !important;
+  color: #ffffff !important;
+  border-color: #ef4444 !important;
+  box-shadow: 0 3px 10px rgba(239, 68, 68, 0.35) !important;
+}
+
+.filterChipAlertActive:hover {
+  background-color: #dc2626 !important;
+  color: #ffffff !important;
+  border-color: #dc2626 !important;
+}
+
+/* Classroom Board Grid */
+.classroomGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+  gap: 16px;
+}
+
+.roomCard {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.roomCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+}
+
+/* Card Alert State (10-min passed without attendance) */
+.roomCardAlert {
+  border: 2px solid #ef4444 !important;
+  background: linear-gradient(180deg, #fff5f5 0%, #ffffff 100%);
+  animation: pulseRedBorder 2s infinite ease-in-out;
+}
+
+@keyframes pulseRedBorder {
+  0% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.35); }
+  50% { box-shadow: 0 0 0 6px rgba(239, 68, 68, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.35); }
+}
+
+.roomCardActive {
+  border: 2px solid #10b981;
+  background: linear-gradient(180deg, #f0fdf4 0%, #ffffff 100%);
+}
+
+.roomCardEmpty {
+  background-color: #f8fafc;
+  border: 1px dashed #cbd5e1;
+}
+
+.roomCardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #f1f5f9;
+  padding-bottom: 10px;
+}
+
+.roomTitleRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.roomNameText {
+  font-size: 16px;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.roomFloorBadge {
+  font-size: 11px;
+  font-weight: 600;
+  background-color: #f1f5f9;
+  color: #64748b;
+  padding: 2px 6px;
+  border-radius: 6px;
+}
+
+.roomStatusBadge {
+  font-size: 11px;
+  font-weight: 800;
+  padding: 3px 8px;
+  border-radius: 20px;
+}
+
+.roomCardBody {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.roomLessonGroup {
+  font-size: 14px;
+  font-weight: 800;
+  color: #1e293b;
+  line-height: 1.3;
+}
+
+.roomCourseSub {
+  font-size: 12px;
+  font-weight: 600;
+  color: #2563eb;
+}
+
+.roomTeacherInfo {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: #475569;
+  font-weight: 500;
+}
+
+.roomTimeBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #0f172a;
+  background-color: #f8fafc;
+  padding: 4px 8px;
+  border-radius: 6px;
+  border: 1px solid #e2e8f0;
+  width: fit-content;
+}
+
+/* Attendance Status Box inside Room Card */
+.roomAttendanceBox {
+  border-radius: 8px;
+  padding: 8px 10px;
+  margin-top: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.attendanceBoxAlert {
+  background-color: #fee2e2;
+  border: 1px solid #fca5a5;
+}
+
+.attendanceBoxSuccess {
+  background-color: #ecfdf5;
+  border: 1px solid #a7f3d0;
+}
+
+.attendanceBoxWaiting {
+  background-color: #fffbeb;
+  border: 1px solid #fde68a;
+}
+
+.attendanceBoxTitle {
+  font-size: 12px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.attendanceBoxDesc {
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+.roomCardFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: 6px;
+  padding-top: 10px;
+  border-top: 1px solid #f1f5f9;
+}
+
+.roomActionBtnPrimary {
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  background-color: #0f172a;
+  color: #ffffff;
+  border: none;
+  padding: 7px 12px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.roomActionBtnPrimary:hover {
+  background-color: #2563eb;
+}
+
+.roomActionBtnAlert {
+  background-color: #dc2626 !important;
+}
+
+.roomActionBtnAlert:hover {
+  background-color: #b91c1c !important;
+}
+
+.roomNotifyBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 7px 10px;
+  border-radius: 8px;
+  background-color: #fef2f2;
+  border: 1px solid #fecaca;
+  color: #dc2626;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.roomNotifyBtn:hover {
+  background-color: #fee2e2;
+}
+
+/* Toast alert notification */
+.toastAlertFloating {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background-color: #0f172a;
+  color: #ffffff;
+  border-radius: 12px;
+  padding: 14px 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  z-index: 9999;
+  animation: slideUpToast 0.3s ease-out;
+}
+
+@keyframes slideUpToast {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* Live Monitor Empty States */
+.liveEmptyStateCard {
+  background-color: #ffffff;
+  border: 1.5px dashed #cbd5e1;
+  border-radius: 16px;
+  padding: 56px 24px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 8px 0 24px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+}
+
+.liveEmptyStateIconBox {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background-color: #f1f5f9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.liveEmptyStateIconBoxGreen {
+  background-color: #ecfdf5;
+}
+
+.liveEmptyStateIconBoxRed {
+  background-color: #fef2f2;
+}
+
+.liveEmptyStateTitle {
+  font-size: 18px;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0 0 8px;
+}
+
+.liveEmptyStateDesc {
+  font-size: 14px;
+  color: #64748b;
+  max-width: 540px;
+  line-height: 1.6;
+  margin: 0 0 22px;
+}
+
+.liveEmptyStateActions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.liveEmptyStateBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #2563eb;
+  color: #ffffff;
+  border: none;
+  padding: 10px 22px;
+  border-radius: 10px;
+  font-size: 13.5px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.25);
+}
+
+.liveEmptyStateBtn:hover {
+  background-color: #1d4ed8;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35);
+}
+
+.liveEmptyStateBtnSecondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #f8fafc;
+  color: #334155;
+  border: 1px solid #cbd5e1;
+  padding: 10px 18px;
+  border-radius: 10px;
+  font-size: 13.5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.liveEmptyStateBtnSecondary:hover {
+  background-color: #f1f5f9;
+  border-color: #94a3b8;
+  color: #0f172a;
+}
+
+
+
