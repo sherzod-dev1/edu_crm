@@ -25,6 +25,28 @@ const resolveBaseURL = () => {
   return envUrl || 'http://localhost:5000/api/v1';
 };
 
+// Active requests tracker for Global Loading indicator
+let activeRequestsCount = 0;
+const loadingListeners = new Set();
+
+export const subscribeToLoading = (callback) => {
+  loadingListeners.add(callback);
+  callback(activeRequestsCount > 0, activeRequestsCount);
+  return () => loadingListeners.delete(callback);
+};
+
+const notifyLoading = (delta) => {
+  activeRequestsCount = Math.max(0, activeRequestsCount + delta);
+  const isLoading = activeRequestsCount > 0;
+  loadingListeners.forEach((fn) => {
+    try {
+      fn(isLoading, activeRequestsCount);
+    } catch (e) {
+      console.error(e);
+    }
+  });
+};
+
 const api = axios.create({
   baseURL: resolveBaseURL(),
   headers: {
@@ -33,22 +55,30 @@ const api = axios.create({
   timeout: 15000,
 });
 
-// Request interceptor — add Bearer token to headers
+// Request interceptor — add Bearer token to headers & track loading
 api.interceptors.request.use(
   (config) => {
+    notifyLoading(1);
     const token = getAccessToken();
     if (token) {
       config.headers.Authorization = `Bearer ${token}`;
     }
     return config;
   },
-  (error) => Promise.reject(error)
+  (error) => {
+    notifyLoading(-1);
+    return Promise.reject(error);
+  }
 );
 
-// Response interceptor — handle global HTTP errors (e.g. 401 Unauthorized)
+// Response interceptor — handle global HTTP errors & finish loading
 api.interceptors.response.use(
-  (response) => response,
+  (response) => {
+    notifyLoading(-1);
+    return response;
+  },
   (error) => {
+    notifyLoading(-1);
     if (error.response && error.response.status === 401) {
       // Clear token and redirect to login if unauthorized
       clearAuthStorage();

@@ -972,7 +972,7 @@ const Leads = () => {
                 >
                   Bekor qilish
                 </Button>
-                <Button type="submit" variant="primary">
+                <Button type="submit" variant="primary" loading={loading}>
                   {isCreateModalOpen ? "Lidni Qo'shish" : "Saqlash"}
                 </Button>
               </div>

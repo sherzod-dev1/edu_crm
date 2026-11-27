@@ -848,7 +848,7 @@ const Contracts = () => {
                 >
                   Bekor qilish
                 </Button>
-                <Button type="submit" variant="primary">
+                <Button type="submit" variant="primary" loading={loading}>
                   {isCreateModalOpen ? 'Shartnoma Tuzish' : 'Saqlash'}
                 </Button>
               </div>

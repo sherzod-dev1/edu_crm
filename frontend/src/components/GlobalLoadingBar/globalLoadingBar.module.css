@@ -1,0 +1,63 @@
+.wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  z-index: 9999999;
+  pointer-events: none;
+}
+
+.progressBar {
+  height: 3.5px;
+  background: linear-gradient(90deg, #6366f1 0%, #3b82f6 35%, #06b6d4 70%, #10b981 100%);
+  box-shadow: 0 0 12px rgba(99, 102, 241, 0.7), 0 0 4px rgba(6, 182, 212, 0.9);
+  transition: width 0.25s cubic-bezier(0.1, 0.9, 0.2, 1), opacity 0.35s ease;
+  border-radius: 0 2px 2px 0;
+}
+
+.floatingIndicator {
+  position: fixed;
+  top: 14px;
+  right: 20px;
+  background: rgba(15, 23, 42, 0.88);
+  backdrop-filter: blur(8px);
+  color: #ffffff;
+  padding: 6px 14px;
+  border-radius: 9999px;
+  font-size: 12px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18), 0 0 0 1px rgba(255, 255, 255, 0.1);
+  animation: fadeInDown 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 9999999;
+}
+
+.spinner {
+  width: 13px;
+  height: 13px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: #38bdf8;
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+

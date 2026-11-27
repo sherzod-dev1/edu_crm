@@ -1675,9 +1675,15 @@ const Students = () => {
               >
                 Bekor qilish
               </button>
-              <button type="submit" className={styles.primarySaveBtn}>
-                <Save size={16} />
-                <span>{viewMode === 'CREATE' ? 'Yaratish' : 'Saqlash'}</span>
+              <button type="submit" className={styles.primarySaveBtn} disabled={loading}>
+                {loading ? (
+                  <span>Saqlanmoqda...</span>
+                ) : (
+                  <>
+                    <Save size={16} />
+                    <span>{viewMode === 'CREATE' ? 'Yaratish' : 'Saqlash'}</span>
+                  </>
+                )}
               </button>
             </div>
           </form>

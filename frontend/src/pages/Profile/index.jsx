@@ -140,6 +140,7 @@ const Profile = () => {
   const [isPasswordModalOpen, setIsPasswordModalOpen] = useState(false);
   const [isEditProfileModalOpen, setIsEditProfileModalOpen] = useState(false);
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
+  const [isProfileSaving, setIsProfileSaving] = useState(false);
 
   // Password & Edit Forms
   const [newPassword, setNewPassword] = useState('');
@@ -474,6 +475,7 @@ const Profile = () => {
     }
 
     try {
+      setIsProfileSaving(true);
       const targetId = isViewingTeacher
         ? teacherProfile?.user_id || teacherProfile?.user?.id || targetUser?.id || user?.id
         : user?.id;
@@ -503,6 +505,8 @@ const Profile = () => {
       }
     } catch (err) {
       alert("Xatolik: " + (err.response?.data?.message || err.message));
+    } finally {
+      setIsProfileSaving(false);
     }
   };
 
@@ -510,6 +514,7 @@ const Profile = () => {
   const handleUpdateProfile = async (e) => {
     e.preventDefault();
     try {
+      setIsProfileSaving(true);
       const targetUserId = isViewingTeacher
         ? teacherProfile?.user_id || teacherProfile?.user?.id || targetUser?.id
         : user?.id;
@@ -556,6 +561,8 @@ const Profile = () => {
       }
     } catch (err) {
       alert("Xatolik: " + (err.response?.data?.message || err.message));
+    } finally {
+      setIsProfileSaving(false);
     }
   };
 
@@ -1197,9 +1204,9 @@ const Profile = () => {
                 >
                   Bekor qilish
                 </button>
-                <button type="submit" className={styles.primaryActionBtn}>
+                <button type="submit" className={styles.primaryActionBtn} disabled={isProfileSaving}>
                   <Save size={15} />
-                  <span>Parolni Saqlash</span>
+                  <span>{isProfileSaving ? 'Saqlanmoqda...' : 'Parolni Saqlash'}</span>
                 </button>
               </div>
             </form>
@@ -1404,9 +1411,9 @@ const Profile = () => {
                 >
                   Bekor qilish
                 </button>
-                <button type="submit" className={styles.primaryActionBtn}>
+                <button type="submit" className={styles.primaryActionBtn} disabled={isProfileSaving}>
                   <Save size={15} />
-                  <span>Saqlash</span>
+                  <span>{isProfileSaving ? 'Saqlanmoqda...' : 'Saqlash'}</span>
                 </button>
               </div>
             </form>

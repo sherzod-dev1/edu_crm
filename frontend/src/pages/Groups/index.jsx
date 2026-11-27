@@ -2285,7 +2285,7 @@ const Groups = () => {
                 >
                   Bekor qilish
                 </Button>
-                <Button type="submit" variant="primary">
+                <Button type="submit" variant="primary" loading={loading}>
                   Biriktirish
                 </Button>
               </div>

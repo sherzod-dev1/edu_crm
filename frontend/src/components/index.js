@@ -7,3 +7,4 @@ export { default as Loader } from './Loader';
 export { default as Tooltip } from './Tooltip';
 export { default as ContractReminderBanner } from './ContractReminderBanner';
 export { default as ContractModal } from './ContractModal';
+export { default as GlobalLoadingBar } from './GlobalLoadingBar';

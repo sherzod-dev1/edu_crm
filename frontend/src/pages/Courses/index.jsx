@@ -2624,7 +2624,7 @@ const Courses = () => {
                 >
                   Bekor qilish
                 </Button>
-                <Button type="submit" variant="primary">
+                <Button type="submit" variant="primary" loading={loading}>
                   Saqlash
                 </Button>
               </div>
@@ -2793,7 +2793,7 @@ const Courses = () => {
                 >
                   Bekor qilish
                 </Button>
-                <Button type="submit" variant="primary" icon={Send}>
+                <Button type="submit" variant="primary" icon={Send} loading={loading}>
                   Topshirish
                 </Button>
               </div>

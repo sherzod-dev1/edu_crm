@@ -1392,8 +1392,8 @@ const Payments = () => {
                   >
                     Bekor qilish
                   </button>
-                  <button type="submit" className={styles.modalSubmitBtn}>
-                    To'lovni Tasdiqlash
+                  <button type="submit" className={styles.modalSubmitBtn} disabled={loading}>
+                    {loading ? "Tasdiqlanmoqda..." : "To'lovni Tasdiqlash"}
                   </button>
                 </div>
               </form>
@@ -2462,9 +2462,15 @@ const Payments = () => {
                   >
                     Bekor qilish
                   </button>
-                  <button type="submit" className={styles.pageSubmitBtn}>
-                    <CheckCircle2 size={16} />
-                    To'lovni Tasdiqlash & Chek Chiqarish
+                  <button type="submit" className={styles.pageSubmitBtn} disabled={loading}>
+                    {loading ? (
+                      "Tasdiqlanmoqda..."
+                    ) : (
+                      <>
+                        <CheckCircle2 size={16} />
+                        To'lovni Tasdiqlash & Chek Chiqarish
+                      </>
+                    )}
                   </button>
                 </div>
               </form>
@@ -2550,9 +2556,16 @@ const Payments = () => {
                   form="kirimPaymentForm"
                   className={styles.pageSubmitBtn}
                   style={{ width: '100%', justifyContent: 'center' }}
+                  disabled={loading}
                 >
-                  <Check size={16} />
-                  To'lovni Tasdiqlash
+                  {loading ? (
+                    "Tasdiqlanmoqda..."
+                  ) : (
+                    <>
+                      <Check size={16} />
+                      To'lovni Tasdiqlash
+                    </>
+                  )}
                 </button>
               </div>
             </div>
@@ -2695,9 +2708,16 @@ const Payments = () => {
                   type="submit"
                   className={styles.pageSubmitBtn}
                   style={{ backgroundColor: '#ef4444', boxShadow: '0 4px 12px rgba(239, 68, 68, 0.2)' }}
+                  disabled={loading}
                 >
-                  <TrendingDown size={16} />
-                  Xarajatni Saqlash
+                  {loading ? (
+                    "Saqlanmoqda..."
+                  ) : (
+                    <>
+                      <TrendingDown size={16} />
+                      Xarajatni Saqlash
+                    </>
+                  )}
                 </button>
               </div>
             </form>
@@ -2844,9 +2864,16 @@ const Payments = () => {
                   type="submit"
                   className={styles.pageSubmitBtn}
                   style={{ backgroundColor: '#2563eb', boxShadow: '0 4px 12px rgba(37, 99, 235, 0.2)' }}
+                  disabled={loading}
                 >
-                  <ArrowRightLeft size={16} />
-                  O'tkazmani Bajarish
+                  {loading ? (
+                    "Bajarilmoqda..."
+                  ) : (
+                    <>
+                      <ArrowRightLeft size={16} />
+                      O'tkazmani Bajarish
+                    </>
+                  )}
                 </button>
               </div>
             </form>

@@ -21,6 +21,7 @@ import {
 } from '../../services/homeworkStorage';
 import ParentPortal from '../ParentPortal';
 import api from '../../services/api';
+import { Loader } from '../../components';
 import { GiTeacher } from 'react-icons/gi';
 import {
   Users,
@@ -107,6 +108,8 @@ const Dashboard = () => {
   const userBranchId = user?.branch_id || user?.branch?.id;
   const userCenterName = user?.branch?.name || user?.full_name || "Yuksalish Ta'limi";
 
+  const [dashboardLoading, setDashboardLoading] = useState(true);
+
   useEffect(() => {
     dispatch(fetchBranches());
     if (!isTeacher && !isStudent) {
@@ -127,6 +130,11 @@ const Dashboard = () => {
     dispatch(fetchLessons({ limit: 1000 }));
     dispatch(fetchActivities({ limit: 50 }));
     dispatch(fetchExams({ limit: 100 }));
+
+    const timer = setTimeout(() => {
+      setDashboardLoading(false);
+    }, 650);
+    return () => clearTimeout(timer);
   }, [dispatch, isTeacher, isStudent]);
 
   // Uzbek Date String helper
@@ -1715,6 +1723,17 @@ const Dashboard = () => {
   }, [isTeacher]);
 
   const studentInitial = (user?.full_name || 'Talaba').charAt(0).toUpperCase();
+
+  // =========================================================================
+  // INITIAL DASHBOARD LOADING STATE
+  // =========================================================================
+  if (dashboardLoading) {
+    return (
+      <div className={styles.dashboardContainer} style={{ minHeight: '60vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+        <Loader size="lg" text="Boshqaruv paneli ma'lumotlari tahlil qilinmoqda..." />
+      </div>
+    );
+  }
 
   // =========================================================================
   // RENDER: PARENT DASHBOARD (OTA-ONA KABINETI)

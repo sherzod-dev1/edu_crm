@@ -1623,9 +1623,15 @@ const Teachers = () => {
               >
                 Bekor qilish
               </button>
-              <button type="submit" className={styles.primarySaveBtn}>
-                <Save size={16} />
-                <span>{viewMode === 'CREATE' ? "O'qituvchini Saqlash" : "O'zgarishlarni Saqlash"}</span>
+              <button type="submit" className={styles.primarySaveBtn} disabled={loading}>
+                {loading ? (
+                  <span>Saqlanmoqda...</span>
+                ) : (
+                  <>
+                    <Save size={16} />
+                    <span>{viewMode === 'CREATE' ? "O'qituvchini Saqlash" : "O'zgarishlarni Saqlash"}</span>
+                  </>
+                )}
               </button>
             </div>
           </form>

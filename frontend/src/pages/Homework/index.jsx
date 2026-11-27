@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useMemo, useCallback } from 'react';
 import { useSelector } from 'react-redux';
 import { Breadcrumbs } from '../../layout';
-import { Button } from '../../components';
+import { Button, Loader } from '../../components';
 import groupApi from '../../services/groupApi';
 import groupStudentApi from '../../services/groupStudentApi';
 import studentApi from '../../services/studentApi';
@@ -144,6 +144,7 @@ const Homework = () => {
   const [createError, setCreateError] = useState('');
 
   const [toastMessage, setToastMessage] = useState('');
+  const [isActionLoading, setIsActionLoading] = useState(false);
 
   // 1. Fetch backend groups and relations
   useEffect(() => {
@@ -1516,7 +1517,7 @@ const Homework = () => {
                 >
                   Bekor qilish
                 </Button>
-                <Button type="submit" variant="primary" icon={Send}>
+                <Button type="submit" variant="primary" icon={Send} loading={isActionLoading}>
                   Guruhga Joylash
                 </Button>
               </div>
@@ -1681,7 +1682,7 @@ const Homework = () => {
                 >
                   Bekor qilish
                 </Button>
-                <Button type="submit" variant="primary" icon={Send}>
+                <Button type="submit" variant="primary" icon={Send} loading={isActionLoading}>
                   Topshirish
                 </Button>
               </div>
@@ -1868,7 +1869,7 @@ const Homework = () => {
                 >
                   Bekor qilish
                 </Button>
-                <Button type="submit" variant="primary" icon={Award}>
+                <Button type="submit" variant="primary" icon={Award} loading={isActionLoading}>
                   Baholashni Saqlash
                 </Button>
               </div>
